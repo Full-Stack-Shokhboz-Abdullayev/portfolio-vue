@@ -723,8 +723,10 @@ export default {
 		...mapState('Faqs', ['faqs']),
 		...mapGetters('Faqs', ['faqsLoading'])
 	},
-	mounted() {
-		this.setFaqs()
+	created() {
+		if (this.faqs.length === 0) {
+			this.setFaqs()
+		}
 	},
 	methods: {
 		validate,

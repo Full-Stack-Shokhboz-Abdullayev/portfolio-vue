@@ -680,21 +680,32 @@
 							/>
 							<div class="card-body">
 								<h5 class="card-title">
-									<a class="theme-link" href="blog-post.html">
-										{{ blog.heading }}
-									</a>
+									<router-link
+										:to="{
+											name: 'particular-blog',
+											params: { slug: blog.slug }
+										}"
+										>{{ blog.heading }}</router-link
+									>
 								</h5>
 								<p class="card-text">
 									{{ blog.tag }}
 									<br />
 									<br />
 									<b class="blog-lang"
-										>Language: {{ blog.lang }}</b
+										>Language: {{ blog.language }}</b
 									>
 								</p>
 								<p class="mb-0">
-									<a class="more-link" href="blog-post.html"
-										>{{ $t('regulars.readMore') }} →</a
+									<router-link
+										:to="{
+											name: 'particular-blog',
+											params: { slug: blog.slug }
+										}"
+										>{{
+											$t('regulars.readMore')
+										}}
+										→</router-link
 									>
 								</p>
 							</div>
@@ -778,14 +789,22 @@ export default {
 		onMouseEnter,
 		onMouseLeave,
 		onMouseMove,
-
+		onLoad() {
+			if (this.latestBlogs.length === 0) {
+				this.setLatestBlogs()
+			}
+			if (this.featuredProjects.length === 0) {
+				this.setFeaturedProjects()
+			}
+		},
 		...mapActions('Projects', ['setFeaturedProjects']),
 		...mapActions('Blogs', ['setLatestBlogs'])
 	},
 	mounted() {
 		this.$intersectionAnimation()
-		this.setFeaturedProjects()
-		this.setLatestBlogs()
+	},
+	created() {
+		this.onLoad()
 	},
 	updated() {
 		this.$intersectionAnimation()

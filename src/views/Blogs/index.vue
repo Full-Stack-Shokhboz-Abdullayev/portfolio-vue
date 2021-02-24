@@ -31,15 +31,17 @@
 					</div>
 					<button type="submit" class="btn">Subscribe</button>
 				</form>
-				<div class="mt-5">
-					<router-link
-						:to="{ name: 'add-blog' }"
-						tag="button"
-						class="btn circle"
-					>
-						<i class="fa fa-plus"></i>
-					</router-link>
-				</div>
+				<transition name="fade" mode="out-in">
+					<div class="mt-5" v-if="adminLoggedIn">
+						<router-link
+							:to="{ name: 'add-blog' }"
+							tag="button"
+							class="btn circle"
+						>
+							Add Blog
+						</router-link>
+					</div>
+				</transition>
 			</div>
 			<!--//container-->
 		</section>
@@ -135,6 +137,7 @@ import validate from '@/assets/jsComponents/validate'
 export default {
 	computed: {
 		...mapState('Blogs', ['blogPosts']),
+		...mapState('Auth', ['adminLoggedIn']),
 		...mapState(['prevRoute', 'editMode']),
 		blogsLoading() {
 			return this.blogPosts.length === 0
@@ -152,7 +155,7 @@ export default {
 			e.style.transitionDelay = `${this.delay}s`
 			this.delay += 0.15
 		},
-		
+
 		...mapActions('Blogs', ['setBlogs'])
 	},
 
@@ -161,9 +164,11 @@ export default {
 			title: 'Blogs'
 		}
 	},
-	mounted() {
-		this.$intersectionAnimation()
-		this.setBlogs()
+	created() {
+		// this.$intersectionAnimation()
+		if (this.blogPosts.length === 0) {
+			this.setBlogs()
+		}
 	},
 	updated() {
 		this.$intersectionAnimation()
@@ -174,6 +179,12 @@ export default {
 <style lang="scss" scoped>
 form {
 	margin-top: 20px;
+}
+body {
+	.min-h,
+	.main-wrapper {
+		height: auto !important;
+	}
 }
 .newsletter {
 	background: transparent;

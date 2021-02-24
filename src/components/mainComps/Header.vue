@@ -18,7 +18,7 @@
 							<v-lazy-image :src="me2" src-placeholder="Hello" />
 							<div class="filter"></div>
 						</div>
-						<div class="bio mb-3">
+						<div class="bio motto mb-3 px-2">
 							<!-- <i>
 								Be calm and reach your goal. 
 							</i> -->
@@ -217,6 +217,7 @@
 								<a
 									href="https://tviser.agency"
 									target="_blank"
+									rel="noopener"
 									class="text-l"
 									>tviser.agency</a
 								>
@@ -275,6 +276,23 @@
 							<div class="switch-btn" :class="{ darkOn }" />
 						</div>
 					</div>
+					<hr />
+					<transition name="fade" mode="out-in">
+						<button
+							v-if="!adminLoggedIn"
+							@click="openModal('login')"
+							class="btn btn-block mt-4 custom-btn header-hire"
+						>
+							Login as Admin
+						</button>
+						<button
+							v-else
+							class="btn mt-4 btn-danger"
+							@click="openModal('logout')"
+						>
+							Logout
+						</button>
+					</transition>
 				</div>
 			</nav>
 		</div>
@@ -283,7 +301,6 @@
 
 <script>
 import me2 from '@/assets/img/me2.jpg'
-
 import { mapState } from 'vuex'
 export default {
 	data() {
@@ -295,6 +312,7 @@ export default {
 	},
 	computed: {
 		...mapState(['socials']),
+		...mapState('Auth', ['adminLoggedIn']),
 		text() {
 			return this.darkOn
 				? this.$t('themes.light')
@@ -312,6 +330,9 @@ export default {
 	},
 
 	methods: {
+		openModal(name) {
+			this.$modal.show(name)
+		},
 		setLang(lang) {
 			this.$i18n.locale = lang
 			localStorage.setItem('language', lang)
@@ -363,4 +384,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.motto {
+	font-style: italic;
+	border-left: 2px white solid;
+}
+</style>

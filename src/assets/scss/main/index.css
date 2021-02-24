@@ -493,6 +493,23 @@ footer {
   font-size: 22px;
 }
 
+.fade-enter {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fade-enter-active {
+  -webkit-transition: 0.4s ease-in-out all !important;
+  transition: 0.4s ease-in-out all !important;
+}
+
+.fade-leave-active {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.4s ease-in-out all !important;
+  transition: 0.4s ease-in-out all !important;
+}
+
 .btn:focus {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
@@ -1178,8 +1195,8 @@ body .main-wrapper .featured-section .card {
 }
 
 .blog-post-card {
-  -webkit-transition: 0.4s ease-in-out all;
-  transition: 0.4s ease-in-out all;
+  -webkit-transition: 0.4s ease-in-out box-shadow;
+  transition: 0.4s ease-in-out box-shadow;
   -webkit-box-shadow: 0px 0px 15px rgba(1, 1, 1, 0.1) !important;
           box-shadow: 0px 0px 15px rgba(1, 1, 1, 0.1) !important;
   background: var(--pr-sbg);
@@ -1354,7 +1371,8 @@ body .main-wrapper .featured-section .card {
   }
 }
 
-.project-post-form, .faq-post-form {
+.project-post-form,
+.faq-post-form {
   width: 600px;
   margin-top: 100px !important;
 }
@@ -1630,7 +1648,7 @@ body .main-wrapper .featured-section .card {
     width: 100% !important;
   }
   .projects .card {
-    height: auto !important;
+    height: 400px !important;
     width: 80% !important;
     margin: 0 10% !important;
   }
@@ -2030,23 +2048,23 @@ body .main-wrapper .blog-media {
   }
 }
 
-@media (max-width: 360px) {
-  .blog .signup-form {
-    -webkit-box-orient: vertical !important;
-    -webkit-box-direction: normal !important;
-        -ms-flex-direction: column !important;
-            flex-direction: column !important;
-  }
-  .blog .signup-form button {
-    margin-top: 10px;
-  }
+@media (max-width: 460px) {
   .blog .signup-form .wrap-input2 {
-    width: 100% !important;
-    margin: 0 !important;
+    width: 80% !important;
+    margin-right: 10% !important;
+    margin-left: 10% !important;
+    margin-bottom: 30px !important;
   }
-  .blog .signup-form .wrap-input2 input {
+  .blog .signup-form input {
     width: 100% !important;
-    outline: none !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .blog .signup-form .wrap-input2 {
+    width: 96% !important;
+    margin-right: 2% !important;
+    margin-left: 2% !important;
   }
 }
 
@@ -2055,24 +2073,93 @@ body .main-wrapper .blog-media {
   margin: auto;
 }
 
-.intro {
-  margin-bottom: 40px;
+.blog-view .heading-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.intro__img {
-  width: 680px;
-  height: 350px;
+.blog-view .heading {
+  font-size: 52px !important;
+  max-width: 90%;
+  text-align: center;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.blog__body__text {
+  width: 100% !important;
+}
+
+.particular-blog .intro {
+  width: calc(100% - 280px);
+  position: relative;
+  height: auto !important;
+  position: fixed;
+}
+
+.particular-blog .intro__img {
+  left: 0;
+  height: 550px;
   margin: auto;
-  border-radius: 10px;
+  width: 100% !important;
+  position: unset !important;
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-@media (max-width: 680px) {
-  .blog,
-  .intro__img {
-    width: 95% !important;
+@media (max-width: 1050px) {
+  .particular-blog .cta-section {
+    height: auto !important;
+  }
+  .particular-blog .intro {
+    width: 100% !important;
+    position: unset;
+  }
+  .particular-blog .intro__img {
+    height: auto;
+  }
+}
+
+@media (max-width: 725px) {
+  .blog-view {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100% !important;
+  }
+  .blog__body {
+    width: 85% !important;
+  }
+  .blog__body__text {
+    width: 100% !important;
+  }
+  .heading-container,
+  .heading-container .heading {
+    width: -webkit-fit-content !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+}
+
+@media (max-width: 590px) {
+  .actions {
+    position: unset !important;
+    margin-bottom: 50px;
   }
 }
 

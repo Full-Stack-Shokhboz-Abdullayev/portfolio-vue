@@ -7,9 +7,7 @@
 	align-items: center;
 	flex-wrap: wrap;
 }
-.blog .heading {
-	// text-transform: capitalize;
-}
+
 body .main-wrapper .blog-media {
 	width: 300px !important;
 }
@@ -28,19 +26,26 @@ body .main-wrapper .blog-media {
 		font-size: 1.5rem !important;
 	}
 }
+@media (max-width: 460px) {
+	.blog .signup-form {
+		.wrap-input2 {
+			width: 80% !important;
+
+			margin-right: 10% !important;
+			margin-left: 10% !important;
+			margin-bottom: 30px !important;
+		}
+		input {
+			width: 100% !important;
+		}
+	}
+}
 @media (max-width: 360px) {
 	.blog .signup-form {
-		flex-direction: column !important;
-		button {
-			margin-top: 10px;
-		}
 		.wrap-input2 {
-			width: 100% !important;
-			margin: 0 !important;
-			input {
-				width: 100% !important;
-				outline: none !important;
-			}
+			width: 96% !important;
+			margin-right: 2% !important;
+			margin-left: 2% !important;
 		}
 	}
 }

@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import Projects from './modules/projects'
 import Faqs from './modules/faqs'
 import Blogs from './modules/blogs'
+import Auth from './modules/auth'
 
 Vue.use(Vuex)
 
@@ -50,7 +51,8 @@ const store = new Vuex.Store({
 	modules: {
 		Projects,
 		Faqs,
-		Blogs
+		Blogs,
+		Auth
 	}
 })
 

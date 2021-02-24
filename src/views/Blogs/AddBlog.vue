@@ -1,6 +1,15 @@
 <template>
 	<div class="main-wrapper overflow-hidden h-auto position-relative">
-		<button @click="addBlog" class="btn publish-btn">{{ publish }}</button>
+		<div class="publish-btn">
+			<button @click="addBlog" class="btn position-relative">
+				{{ publish }}
+				<app-loading
+					:small="true"
+					v-if="publishing"
+					:condition="publishing"
+				></app-loading>
+			</button>
+		</div>
 		<router-link tag="button" class="go-back" :to="{ name: 'blog' }">
 			<i class="fa fa-arrow-left"></i>
 		</router-link>
@@ -244,6 +253,7 @@ export default {
 				tag: '',
 				language: 'English'
 			},
+			publishing: false,
 			html: ''
 		}
 	},
@@ -262,17 +272,19 @@ export default {
 
 			return tag.trim() + '...'
 		},
-		addBlog() {
+		async addBlog() {
+			this.publishing = true
 			if (this.html.length !== 0) {
 				this.form.tag = this.makeTag(this.html, 6)
 			}
 
 			if (this.form._id) {
-				this.updateBlog(this.form)
-				console.log(this.form);
+				await this.updateBlog(this.form)
+				console.log(this.form)
 			} else {
-				this.postBlog(this.form)
+				await this.postBlog(this.form)
 			}
+			this.publishing = false
 			this.$router.push({
 				name: 'blog'
 			})

@@ -14,17 +14,26 @@ const mutations = {
 	setLatestBlogs(state, payload) {
 		state.latestBlogs = payload
 	},
+	addBlog(state, newBlog) {
+		state.blogPosts.unshift(newBlog)
+
+	},
+	configureLatestBlogs(state) {
+		state.latestBlogs = state.blogPosts.slice(0, 3)
+	},
 	updateBlog(state, data) {
 		let index = state.blogPosts.findIndex((blog) => {
 			return blog._id === data._id
 		})
 		Vue.set(state.blogPosts, index, data)
 	},
+
 	deleteBlog(state, BlogId) {
 		let index = state.blogPosts.findIndex((Blog) => {
 			return Blog._id === BlogId
 		})
 		Vue.delete(state.blogPosts, index)
+		// state.blogPosts = state.blogPosts.filter((b) => b._id !== BlogId)
 	}
 }
 
@@ -42,18 +51,22 @@ const actions = {
 		context.commit('setLatestBlogs', blogs)
 	},
 	async postBlog(context, payload) {
-		const blogs = await asyncGetter('/blogs', {
+		const blog = await asyncGetter('/blogs', {
 			post: true,
+			requiresAuth: true,
 			body: {
 				...payload
 			}
 		})
 
-		context.commit('setLatestBlogs', blogs)
+		// context.commit('setLatestBlogs', blog)
+		context.commit('addBlog', blog)
+		context.commit('configureLatestBlogs')
 	},
 	async updateBlog(context, payload) {
 		const blog = await asyncGetter('/blogs', {
 			put: true,
+			requiresAuth: true,
 			id: payload._id,
 			body: {
 				...payload
@@ -61,12 +74,25 @@ const actions = {
 		})
 		context.commit('updateBlog', blog)
 	},
+	async clapForBlog(context, payload) {
+		await asyncGetter(
+			'/blogs',
+			{
+				put: true,
+				id: payload._id,
+				body: { ...payload }
+			},
+			'/clap'
+		)
+		
+	},
 	async deleteBlog(context, payload) {
-		const blog = await asyncGetter('/blogs', {
+		await asyncGetter('/blogs', {
+			requiresAuth: true,
 			delete: true,
 			id: payload
 		})
-		context.commit('deleteBlog', blog)
+		context.commit('deleteBlog', payload)
 	}
 }
 

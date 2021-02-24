@@ -220,8 +220,8 @@
 									"
 								>
 									<div
-										v-for="(project, index) in projects"
-										:key="index"
+										v-for="(project) in projects"
+										:key="project._id"
 										class="item mb-3"
 									>
 										<div
@@ -484,7 +484,7 @@ export default {
 		...mapState('Projects', ['projects']),
 		...mapGetters('Projects', ['projectsLoading'])
 	},
-	mounted() {
+	created() {
 		if (this.projects.length === 0) {
 			this.setProjects()
 		}

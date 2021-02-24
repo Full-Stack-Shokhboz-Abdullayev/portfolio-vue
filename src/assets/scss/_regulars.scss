@@ -280,6 +280,7 @@ footer {
 	position: absolute;
 	bottom: 0;
 }
+
 .slide-leave-active {
 	transform: translateX(70%);
 
@@ -304,3 +305,17 @@ footer {
 		font-size: 22px;
 	}
 }
+
+.fade-enter {
+	opacity: 0;
+	pointer-events: none;
+}
+.fade-enter-active {
+	transition: 0.4s ease-in-out all !important;
+}
+.fade-leave-active {
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.4s ease-in-out all !important;
+}
+

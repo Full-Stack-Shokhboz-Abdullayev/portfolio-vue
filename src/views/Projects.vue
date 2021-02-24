@@ -35,7 +35,11 @@
 			<div class="container">
 				<div class="text-center">
 					<!--//filters-->
-					<ul id="filters" class="filters mb-5 mx-auto pl-0 no-list">
+					<ul
+						name="prc"
+						id="filters"
+						class="filters mb-5 mx-auto pl-0 no-list"
+					>
 						<li
 							v-for="(val, key) in option.getFilterData"
 							class="button"
@@ -55,6 +59,7 @@
 					id="root_isotope1"
 					:item-selector="'isotope-item'"
 					:layout-mode="'masonry'"
+					:key="changable"
 					:list="projects"
 					:options="option"
 					@filter="filterOption = arguments[0]"
@@ -69,8 +74,8 @@
 					<div
 						class="isotope-item mb-5"
 						:class="[...project.type]"
-						v-for="(project, index) in projects"
-						:key="index"
+						v-for="project in projectsWrapper"
+						:key="project._id"
 					>
 						<div class="card fafa project-card">
 							<div class="project-media no-gutters">
@@ -304,6 +309,7 @@ String.prototype.title = function () {
 export default {
 	data() {
 		return {
+			changable: false,
 			newProject: {
 				title: '',
 				type: [],
@@ -384,19 +390,21 @@ export default {
 				})
 		},
 		// check before post
-		checkAndPost(obj) {
+		async checkAndPost(obj) {
 			this.postLoading = true
 			if (this.newProject.type.length === 0) {
 				console.log('Please select minimum 1 type to submit.')
 			} else {
 				if (obj.projectId) {
-					this.updateProject(this.newProject)
+					await this.updateProject(this.newProject)
 				} else {
-					this.postProject(this.newProject)
+					await this.postProject(this.newProject)
 				}
 				this.cancelEditing()
 			}
 			this.postLoading = false
+			console.log('The Projects',this.projectsWrapper)
+			// this.changable = !this.changable
 		},
 		// vuex actions
 		...mapActions('Projects', [
@@ -413,6 +421,9 @@ export default {
 		},
 		...mapState(['editMode']),
 		...mapState('Projects', ['projects']),
+		projectsWrapper() {
+			return this.projects
+		},
 
 		...mapGetters('Projects', ['projectsLoading']),
 		actionWord() {
@@ -426,7 +437,7 @@ export default {
 	components: {
 		isotope
 	},
-	mounted() {
+	created() {
 		if (this.projects.length === 0) {
 			this.setProjects()
 		}
@@ -440,6 +451,9 @@ export default {
 </script>
 
 <style scoped>
+.projects-list {
+	min-height: 1000px;
+}
 .customize-project button {
 	font-size: 14px !important;
 	padding: 4px 10px !important;
@@ -453,5 +467,12 @@ export default {
 	right: 0;
 
 	/* transform: translateY(90%); */
+}
+.isotope-item {
+	display: inline-block;
+}
+
+.prc-move {
+	transition: 0.3s ease transform !important;
 }
 </style>

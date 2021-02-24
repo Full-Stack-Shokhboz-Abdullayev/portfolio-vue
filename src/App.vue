@@ -1,10 +1,19 @@
 <template>
 	<div>
-		<div class="editToggler btn" @click="$store.commit('toggleEditMode')">
+		<div
+			class="editToggler btn"
+			v-if="adminLoggedIn"
+			@click="$store.commit('toggleEditMode')"
+		>
 			<i class="fa fa-edit"></i>
 		</div>
-		
 
+		<modal :height="'auto'" name="login">
+			<login></login>
+		</modal>
+		<modal :height="'auto'" name="logout">
+			<logout></logout>
+		</modal>
 		<app-header></app-header>
 		<keep-alive max="5">
 			<div class="min-h">
@@ -20,13 +29,22 @@
 <script>
 import appHeader from './components/mainComps/Header'
 import appFooter from './components/mainComps/Footer'
+import { mapState, mapActions } from 'vuex'
 
 export default {
 	components: {
 		appHeader,
-		appFooter
+		appFooter,
+		login: () => import('./components/mainComps/Login'),
+		logout: () => import('./components/mainComps/Logout')
 	},
-	methods: {},
+
+	created() {
+		this.checkUser()
+	},
+	methods: {
+		...mapActions('Auth', ['checkUser'])
+	},
 	head() {
 		return {
 			title: 'Shokhboz Abdullayev',
@@ -36,7 +54,8 @@ export default {
 	computed: {
 		currentYear() {
 			return new Date().getFullYear()
-		}
+		},
+		...mapState('Auth', ['adminLoggedIn'])
 	}
 }
 </script>
@@ -45,10 +64,14 @@ export default {
 .min-h {
 	min-height: 100vh !important;
 }
+
 .publish-btn {
 	position: fixed !important;
 	top: 25px;
 	right: 55px;
 	z-index: 100;
+}
+.vm--modal {
+	background: transparent !important;
 }
 </style>

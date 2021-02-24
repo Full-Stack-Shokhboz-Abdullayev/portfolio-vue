@@ -1,23 +1,26 @@
 <template>
-	<div class="main-wrapper">
-		<section class="cta-section theme-bgs py-5 position-relative">
-			<router-link tag="button" class="go-back" :to="{ name: 'blog' }">
+	<div class="main-wrapper particular-blog">
+		<section
+			ref="blogCta"
+			class="cta-section theme-bgs position-relative shadow-lg"
+		>
+			<!-- <router-link tag="button" class="go-back" :to="{ name: 'blog' }">
 				<i class="fa fa-arrow-left"></i>
-			</router-link>
+			</router-link> -->
 			<div class="intro">
-				<img
-					class="intro__img shadow-lg"
-					src="https://www.imgworlds.com/wp-content/uploads/2015/12/18-CONTACTUS-HEADER.jpg"
+				<video
+					class="intro__img"
+					ref="fullScreenVideo"
+					muted
+					loop
+					src="https://pixabay.com/ru/videos/download/video-28320_medium.mp4"
 					alt=""
 				/>
+				<!-- src="https://vod-progressive.akamaized.net/exp=1613935449~acl=%2A%2F401809133.mp4%2A~hmac=ba75355cb52f078394df753df3b22ab779191ca9049e095ccf23416b2ba26064/vimeo-prod-skyfire-std-us/01/2147/5/135735293/401809133.mp4?filename=Smartphone+-+90.mp4" -->
 			</div>
-			<div class="container text-center single-col-max-width">
-				<h2 class="heading">
-					{{ blog.heading }}
-				</h2>
-			</div>
+
 			<transition appear tag="div" name="fade">
-				<div v-if="editMode" class="edit-blog">
+				<div v-if="editMode && adminLoggedIn" class="edit-blog">
 					<router-link
 						:to="{
 							name: 'add-blog',
@@ -38,12 +41,22 @@
 			</transition>
 			<!--//container-->
 		</section>
-		<div class="blog-view mt-5">
-			<div class="blog__body">
-				<editor-content class="blog__body__text" :editor="editor" />
+		<div class="centralizer pt-5">
+			<div class="blog-view">
+				<div
+					class="heading-container text-center mb-5"
+				>
+					<h2 class="heading mx-auto">
+						{{ blog.heading }}
+					</h2>
+				</div>
+				<div class="blog__body d-flex justify-content-center">
+					<editor-content class="blog__body__text" :editor="editor" />
+				</div>
 			</div>
 		</div>
-		<div class="actions">
+
+		<div class="actions" ref="actions">
 			<div class="d-flex justify-content-center align-items-center">
 				<button class="none py-0 clap-btn" @click="changeClap">
 					<span>
@@ -71,6 +84,7 @@
 				<span class="mt-1"> {{ blog.claps }} </span>
 			</div>
 		</div>
+
 		<!-- <div class="delete-modal main-wrapper w-100 h-100">
 			<div class="centered">
 				<h5>
@@ -103,7 +117,7 @@ export default {
 		return {
 			view: true,
 			blog: {},
-
+			editing: false,
 			clap: {
 				timeout: 0,
 				svg1: [
@@ -120,10 +134,33 @@ export default {
 	},
 	computed: {
 		...mapState('Blogs', ['blogPosts']),
+		...mapState('Auth', ['adminLoggedIn']),
 		...mapState(['editMode'])
 	},
 	methods: {
-		...mapActions('Blogs', ['deleteBlog', 'updateBlog']),
+		onVideoDisappear() {
+			const videoContainer = this.$refs.blogCta
+			const actions = this.$refs.actions
+			const intersect = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (!entry.isIntersecting) {
+							actions.classList.add('appeared')
+						} else {
+							actions.classList.remove('appeared')
+						}
+					})
+				},
+				{
+					rootMargin: '-200px 0px 0px 0px'
+				}
+			)
+			intersect.observe(videoContainer)
+		},
+		...mapActions('Blogs', ['deleteBlog', 'updateBlog', 'clapForBlog']),
+		async showParticularBlog() {
+			await this.getBlog()
+		},
 		deleteBlogRedirect(id) {
 			this.deleteBlog(id)
 			this.$router.push({
@@ -161,21 +198,25 @@ export default {
 		}
 	},
 
-	async mounted() {
-		if (!this.editable) {
-			await this.getBlog()
-		}
+	mounted() {
 		this.setClapSvg()
+		this.$refs.fullScreenVideo.play()
+		this.onVideoDisappear()
+	},
+	created() {
+		this.showParticularBlog()
 	},
 	watch: {
 		blog: {
-			handler() {
-				this.clap.timeout = setTimeout(() => {
-					this.updateBlog({
-						claps: this.blog.claps,
-						_id: this.blog._id
-					})
-				}, 1500)
+			handler(c, p) {
+				if (p.claps !== undefined) {
+					this.clap.timeout = setTimeout(() => {
+						this.clapForBlog({
+							claps: c.claps,
+							_id: c._id
+						})
+					}, 1500)
+				}
 			},
 			deep: true
 		}
@@ -184,13 +225,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.centralizer {
+	z-index: 10;
+	position: relative;
+	background: var(--pr-bg);
+	position: relative !important;
+}
+
+.cta-section {
+	height: 550px;
+	position: relative !important;
+}
 .blog__body__text {
 	overflow: visible !important;
 	padding: 3rem 0 !important;
 }
-.blog__body {
-	position: relative !important;
-}
+
 .edit-blog {
 	position: absolute;
 	bottom: 15px;
@@ -237,8 +287,15 @@ export default {
 	}
 	position: fixed;
 	z-index: 100;
-	top: 80%;
-	margin-left: 150px;
+	left: 90%;
+	top: 45%;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.2s ease-in-out;
+	&.appeared {
+		opacity: 1;
+		pointer-events: all;
+	}
 }
 .text-h {
 	position: absolute;

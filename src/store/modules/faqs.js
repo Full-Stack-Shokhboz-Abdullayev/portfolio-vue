@@ -41,6 +41,7 @@ const actions = {
     },
     async postFaq(context, payload) {
         const data = await asyncGetter('/faqs', {
+			requiresAuth: true,
             post: true,
             body: payload
         })
@@ -48,6 +49,7 @@ const actions = {
     },
     async deleteFaq(context, FaqId) {
         await asyncGetter('/faqs', {
+			requiresAuth: true,
             delete: true,
             id: FaqId
         })
@@ -55,6 +57,7 @@ const actions = {
     },
     async updateFaq(context, body) {
         const data = await asyncGetter('/faqs', {
+			requiresAuth: true,
             put: true,
             id: body._id,
             body

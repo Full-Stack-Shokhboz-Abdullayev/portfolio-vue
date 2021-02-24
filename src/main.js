@@ -12,10 +12,10 @@ import nProgressCss from 'nprogress/nprogress.css'
 //Components
 import intersectionAnimation from '@/assets/jsComponents/intersectionAnimtations'
 
+import VModal from 'vue-js-modal'
 
 import appLoading from '@/components/routesComps/Loading.vue'
 import vLazyImage from 'v-lazy-image'
-
 
 Vue.use(VShowSlide, {
 	customEasing: {
@@ -27,6 +27,12 @@ Vue.use(customStyles)
 Vue.use(boot)
 Vue.use(nProgressCss)
 Vue.use(fa)
+Vue.use(VModal, {
+	dynamicDefaults: {
+		draggable: true,
+		height: 'auto'
+	}
+})
 Vue.config.productionTip = true
 Vue.prototype.$intersectionAnimation = intersectionAnimation
 Vue.component('app-loading', appLoading)
