@@ -116,11 +116,11 @@
 					>
 						<!-- @appear="appearAnimation" -->
 						<!--//col-->
+						<!-- v-show="searchWrappedBlogs.includes(blog)" -->
 						<div
 							class="mb-4 blog-media mx-2"
-							v-for="blog in blogPosts"
+							v-for="blog in searchWrappedBlogs"
 							:key="blog._id"
-							v-show="searchWrappedBlogs.includes(blog)"
 							:class="{
 								'd-inline-block': searchWrappedBlogs.includes(
 									blog
