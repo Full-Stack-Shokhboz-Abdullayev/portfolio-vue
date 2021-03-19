@@ -767,8 +767,6 @@ import {
 	onMouseLeave,
 	onMouseMove
 } from '@/assets/jsComponents/3dAnimation.js'
-import me2 from '@/assets/img/me2.jpg'
-import me from '@/assets/img/me.jpg'
 
 import { mapState, mapActions } from 'vuex'
 import hoverEffect from 'hover-effect'
@@ -787,13 +785,6 @@ export default {
 
 		featuredProjectsLoading() {
 			return this.featuredProjects.length === 0
-		},
-		my() {
-			return me
-		},
-
-		my2() {
-			return me2
 		}
 	},
 
@@ -818,7 +809,7 @@ export default {
 					displacementImage: require('../assets/img/ramen.jpg'),
 					intensity: 0.05,
 					angle: 1 / 12,
-					imagesRatio: 300 / 400
+					imagesRatio: 256 / 384
 				})
 			}, 10)
 		},
