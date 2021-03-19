@@ -1,5 +1,4 @@
 import { getWithExpiry } from '../jsComponents/localStorageExpire'
-// import store from '@/store/index'
 
 export default async (url, options = {}, afterWards = '') => {
 	let _BASE
@@ -28,8 +27,6 @@ export default async (url, options = {}, afterWards = '') => {
 				method: 'POST',
 				headers: {
 					...headers
-
-					// Credentials: 'include'
 				},
 
 				body: JSON.stringify({ ...options.body })
@@ -61,14 +58,11 @@ export default async (url, options = {}, afterWards = '') => {
 		} catch {
 			console.log('Problem Occured')
 		}
-		// if (!data.success && options.requiresAuth) {
-		// 	store.dispatch('Auth/logout')
-		// }
 	}
 
 	data = await data.json()
 	const returningData = data.data ? data.data : data
 	console.log(returningData)
-	console.log('Sucess: ', data.success)
+	console.log('Success: ', data.success)
 	return returningData
 }

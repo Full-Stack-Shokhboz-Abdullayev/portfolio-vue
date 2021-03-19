@@ -74,7 +74,7 @@
 	}
 	.heading-container,
 	.heading-container .heading {
-		width: fit-content !important;
+		width: 90% !important;
 	}
 }
 @media (max-width: 590px) {
@@ -87,5 +87,9 @@
 	.blog,
 	.intro__img {
 		height: 250px !important;
+	}
+	.heading-container,
+	.heading-container .heading {
+		font-size: 32px !important;
 	}
 }

@@ -3,6 +3,9 @@
 		box-shadow: none !important;
 	}
 }
+body {
+	position: relative;
+}
 .svg-inline--fa {
 	display: inline-block;
 	font-size: inherit;
@@ -285,12 +288,14 @@ $switchColor: rgb(231, 231, 231);
 				display: flex !important;
 			}
 			z-index: 100;
+			position: relative;
+			z-index: 1200;
 			max-height: 70px;
 			transition: 0.3s ease max-height !important;
 			overflow-y: hidden !important;
 			&.navOpened {
 				height: auto;
-				max-height: 160vh !important;
+				max-height: 360vh !important;
 				nav {
 					transition: 0.3s all ease;
 					display: flex !important;
@@ -310,7 +315,6 @@ $switchColor: rgb(231, 231, 231);
 				}
 			}
 			width: 100% !important;
-			position: static;
 			.sm-name {
 				padding: 0px !important;
 				height: 70px;

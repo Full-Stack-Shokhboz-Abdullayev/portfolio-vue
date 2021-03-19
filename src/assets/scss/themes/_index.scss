@@ -2,8 +2,8 @@ $pr: pr;
 $primary: #54b689;
 
 html {
-	--pr-primary-color: #54b689;
 	body {
+		--#{$pr}-primary-color: #54b689;
 		--#{$pr}-bg: white;
 		--#{$pr}-sbg: #fafafa;
 		--#{$pr}-text: #4e4e4e;
@@ -11,16 +11,19 @@ html {
 		--#{$pr}-cbtnH: #292929;
 		--#{$pr}-ltext: rgb(0, 0, 0, 0.6);
 		--#{$pr}-stext: #292929;
-
-		// --#{$pr}-service-btn: ;
-
 		--#{$pr}-tb: rgba(0, 0, 0, 0.1);
+		--#{$pr}-search-back: rgba(194, 194, 194, 0.4);
+
 		background: var(--#{$pr}-bg);
 
-		//rich editor theme
 		--#{$pr}-rich-editor__blockquote: rgb(54, 54, 54);
 	}
+
+	.sv {
+		color: $primary;
+	}
 }
+
 body.dark {
 	--#{$pr}-bg: #111821 !important;
 	--#{$pr}-sbg: #151e29 !important;
@@ -30,6 +33,8 @@ body.dark {
 	--#{$pr}-ltext: rgba(255, 255, 255, 0.6);
 	--#{$pr}-stext: rgb(255, 255, 255, 0.95);
 	--#{$pr}-tb: rgba(255, 255, 255, 0.1);
+	--#{$pr}-search-back: #415b7c5b;
+
 
 	//rich editor theme
 	--#{$pr}-rich-editor__blockquote: rgb(218, 218, 218);
@@ -43,6 +48,16 @@ body.dark {
 	}
 	.editor-title {
 		color: white;
+	}
+
+	.sv {
+		color: darken($primary, 20%);
+	}
+	a:not(.btn):not(.text-l):not(.socials) {
+		color: $primary;
+		&:not(.resume-link):hover {
+			color: lighten($color: $primary, $amount: 10%) !important;
+		}
 	}
 	.header {
 		scrollbar-color: rgba(255, 255, 255, 0.1) #1e2a3a !important;

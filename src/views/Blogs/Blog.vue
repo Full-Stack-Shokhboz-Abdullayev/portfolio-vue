@@ -9,13 +9,20 @@
 			</router-link> -->
 			<div class="intro">
 				<video
+					v-if="blog.posterType === 'video'"
 					class="intro__img"
-					ref="fullScreenVideo"
+					id="fullScreenVideo"
 					muted
 					loop
-					src="https://pixabay.com/ru/videos/download/video-28320_medium.mp4"
-					alt=""
 				/>
+				<div v-else>
+					<v-lazy-image
+						class="intro__img"
+						:src="blog.poster"
+						:src-placeholder="require('@/assets/img/snow-placeholder.jpg')"
+					/>
+					<div class="filter"></div>
+				</div>
 				<!-- src="https://vod-progressive.akamaized.net/exp=1613935449~acl=%2A%2F401809133.mp4%2A~hmac=ba75355cb52f078394df753df3b22ab779191ca9049e095ccf23416b2ba26064/vimeo-prod-skyfire-std-us/01/2147/5/135735293/401809133.mp4?filename=Smartphone+-+90.mp4" -->
 			</div>
 
@@ -43,9 +50,7 @@
 		</section>
 		<div class="centralizer pt-5">
 			<div class="blog-view">
-				<div
-					class="heading-container text-center mb-5"
-				>
+				<div class="heading-container text-center mb-5">
 					<h2 class="heading mx-auto">
 						{{ blog.heading }}
 					</h2>
@@ -84,19 +89,6 @@
 				<span class="mt-1"> {{ blog.claps }} </span>
 			</div>
 		</div>
-
-		<!-- <div class="delete-modal main-wrapper w-100 h-100">
-			<div class="centered">
-				<h5>
-					Are you sure to delete the blog
-					<span>"{{ blogHeading }}"</span>?
-				</h5>
-				<div class="btn-group">
-					<button class="btn">Cancel</button>
-					<button class="btn btn-danger">Delete</button>
-				</div>
-			</div>
-		</div> -->
 	</div>
 </template>
 
@@ -167,6 +159,18 @@ export default {
 				name: 'blog'
 			})
 		},
+		playVideo() {
+			setTimeout(() => {
+				const fullScreenVideo = document.querySelector(
+					'#fullScreenVideo'
+				)
+				console.log(fullScreenVideo)
+				if (fullScreenVideo) {
+					fullScreenVideo.src = this.blog.poster
+					fullScreenVideo.play()
+				}
+			}, 800)
+		},
 		changeClap() {
 			clearTimeout(this.clap.timeout)
 			if (tl.isActive()) {
@@ -200,7 +204,7 @@ export default {
 
 	mounted() {
 		this.setClapSvg()
-		this.$refs.fullScreenVideo.play()
+		this.playVideo()
 		this.onVideoDisappear()
 	},
 	created() {
@@ -225,6 +229,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+code,
+pre {
+	white-space: nowrap !important;
+	overflow-x: scroll;
+	height: auto;
+}
 .centralizer {
 	z-index: 10;
 	position: relative;

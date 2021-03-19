@@ -67,8 +67,7 @@ const routes = [
 		component: AddBlog,
 		beforeEnter: async (to, from, next) => {
 			const adminInStore =
-				store.state.Auth.adminLoggedIn &&
-				getWithExpiry('jid256')
+				store.state.Auth.adminLoggedIn && getWithExpiry('jid256')
 
 			if (adminInStore) {
 				return next()
@@ -126,14 +125,13 @@ const routes = [
 		component: Contact
 	},
 
-	{ path: '*', redirect: '/' }
+	{ path: '*', redirect: '/404' }
 ]
 
 const router = new VueRouter({
 	routes,
 	mode: 'history',
-	scrollBehavior(to, from) {
-		store.state.prevRoute = from
+	scrollBehavior() {
 		if ('scrollRestoration' in window.history) {
 			window.history.scrollRestoration = 'manual'
 		}

@@ -15,7 +15,12 @@
 				<div class="navigation d-flex align-items-center flex-column">
 					<div class="profile d-flex flex-column align-items-center">
 						<div class="mb-3 position-relative header-img">
-							<v-lazy-image :src="me2" src-placeholder="Hello" />
+							<v-lazy-image
+								:src="
+									require('@/assets/img/SelfPhoto/photo3.jpg')
+								"
+								src-placeholder="Hello"
+							/>
 							<div class="filter"></div>
 						</div>
 						<div class="bio motto mb-3 px-2">
@@ -32,7 +37,7 @@
 								:key="index"
 								class="list-inline"
 							>
-								<a :href="i.link">
+								<a :href="i.link" class="socials">
 									<i class="fab" :class="i.icon" />
 								</a>
 							</li>
@@ -175,8 +180,7 @@
 						</router-link>
 						<router-link
 							:to="{ name: 'contact' }"
-							exact
-							exact-active-class="active"
+							active-class="active"
 							tag="li"
 							class="link"
 							@click.native="hideNav"

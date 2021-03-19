@@ -80,7 +80,10 @@
 						<div class="card fafa project-card">
 							<div class="project-media no-gutters">
 								<div class="col-lg-4 card-img-holder">
-									<img :src="me" class="card-img" />
+									<img
+										:src="project.image"
+										class="card-img"
+									/>
 								</div>
 								<div class="col-lg-8 content">
 									<div class="card-body">
@@ -122,12 +125,17 @@
 									</div>
 								</transition>
 							</div>
-							<a href="" class="link-mask">
+							<a
+								:href="project.url"
+								target="_blank"
+								class="link-mask"
+							>
 								<!-- <a class="link-mask-link" href="project.html"></a> -->
 								<div class="link-mask-text">
 									<a
 										class="btn btn-secondary-custom"
-										href="project.html"
+										:href="project.url"
+										target="_blank"
 									>
 										<svg
 											class="svg-inline--fa fa-eye fa-w-18 mr-2"
@@ -179,6 +187,23 @@
 					<div class="grey"></div>
 					<div class="slide"></div>
 					<div class="cword">Project Title</div>
+				</div>
+				<div
+					class="wrap-input2 w-100 validate-input"
+					data-validate="Name is required"
+				>
+					<input
+						autocomplete="off"
+						class="input2 w-100"
+						type="text"
+						name="name"
+						required
+						@change="validate"
+						v-model="newProject.image"
+					/>
+					<div class="grey"></div>
+					<div class="slide"></div>
+					<div class="cword">Image URL</div>
 				</div>
 				<div
 					class="wrap-input2 w-100 validate-input"
@@ -315,12 +340,13 @@ export default {
 				type: [],
 				description: '',
 				client: '',
+				image: '',
 				url: ''
 			},
 			postLoading: false,
 			filterOption: 'all',
 			option: {
-				itemSelector: '.element-item',
+				itemSelector: '.isotope-item',
 				layoutMode: 'masonry',
 				getFilterData: {
 					all: function () {
@@ -403,8 +429,7 @@ export default {
 				this.cancelEditing()
 			}
 			this.postLoading = false
-			console.log('The Projects',this.projectsWrapper)
-			// this.changable = !this.changable
+			this.changable = obj.projectId ? !this.changable : this.changable
 		},
 		// vuex actions
 		...mapActions('Projects', [
@@ -459,19 +484,14 @@ export default {
 	padding: 4px 10px !important;
 }
 .customize-project {
-	/* height: 50px !important; */
-
 	z-index: 10;
 	position: absolute !important;
 	bottom: 0 !important;
 	right: 0;
-
-	/* transform: translateY(90%); */
 }
 .isotope-item {
 	display: inline-block;
 }
-
 .prc-move {
 	transition: 0.3s ease transform !important;
 }

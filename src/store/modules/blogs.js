@@ -16,7 +16,6 @@ const mutations = {
 	},
 	addBlog(state, newBlog) {
 		state.blogPosts.unshift(newBlog)
-
 	},
 	configureLatestBlogs(state) {
 		state.latestBlogs = state.blogPosts.slice(0, 3)
@@ -43,6 +42,7 @@ const actions = {
 			get: true
 		})
 		context.commit('setBlogs', blogs)
+		return { done: true }
 	},
 	async setLatestBlogs(context) {
 		const blogs = await asyncGetter('/blogs/latest', {
@@ -84,7 +84,6 @@ const actions = {
 			},
 			'/clap'
 		)
-		
 	},
 	async deleteBlog(context, payload) {
 		await asyncGetter('/blogs', {

@@ -26,7 +26,7 @@
 				<input
 					autocomplete="off"
 					class="input2"
-					type="text"
+					type="email"
 					name="email"
 					v-model.trim="credentials.email"
 					required
@@ -65,24 +65,21 @@
 						class="contact2-form-btn position-relative btn mx-auto btn-block w-50"
 					>
 						Login
-						<!-- {{ $t('contact.form.send') }} -->
-						<!-- <app-loading
-							v-if="sending"
-							:condition="sending"
+
+						<app-loading
+							v-if="loggingIn"
+							:condition="loggingIn"
 							:small="true"
 						></app-loading>
-						<div class="ct" :class="{ shown: sent }">
+						<!-- <div class="ct" :class="{ shown: sent }">
 							<svg viewBox="0 0 100 100">
 								<polyline
 									id="tick"
 									points="25.5,53.5 39.5,67.5 72.5,34.5"
 								/>
-							</svg> -->
-						<!-- </div> -->
+							</svg>
+						</div> -->
 					</button>
-				</div>
-				<div class="forgot-password-link mt-3 text-center">
-					<a class="cursor">Forgot Password?</a>
 				</div>
 			</div>
 		</form>
@@ -96,6 +93,7 @@ export default {
 	data: () => ({
 		error: '',
 		success: true,
+		loggingIn: false,
 		credentials: {
 			email: '',
 			password: ''
@@ -105,15 +103,16 @@ export default {
 		...mapActions('Auth', ['login']),
 		validate,
 		async authLogin() {
+			this.loggingIn = true
 			const result = await this.login(this.credentials)
 
 			this.success = result.success
-			console.log(result);
 			if (result.success) {
 				this.closeLogin()
 			} else if (!result.success) {
 				this.error = result.error
 			}
+			this.loggingIn = false
 		},
 		closeLogin() {
 			this.$modal.hide('login')
@@ -128,20 +127,16 @@ export default {
 	width: 100%;
 	transition: 0.2s ease-in-out height !important;
 }
-.login__form {
-	width: 100%;
-	input {
-		width: 100%;
-	}
-}
 .close-btn {
 	background: transparent !important;
 	position: absolute;
 	top: 20px;
 	right: 20px;
-	color: var(--pr-ltext) !important;
-	&:hover {
-		color: white !important;
+}
+.login__form {
+	width: 100% !important;
+	input {
+		width: 100%;
 	}
 }
 .cursor {
@@ -149,16 +144,5 @@ export default {
 }
 .error-box {
 	border-radius: 5px;
-}
-
-.rotated-enter {
-	transform: rotateX(90deg);
-}
-.rotated-enter-active {
-	transition: transform 0.3s ease-in-out;
-}
-.rotated-leave-active {
-	transition: transform 0.3s ease-in-out;
-	transform: rotateX(90deg);
 }
 </style>

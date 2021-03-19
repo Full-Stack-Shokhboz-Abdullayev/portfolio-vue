@@ -25,7 +25,7 @@
 			<!--//container-->
 		</section>
 
-		<section class="pricing-section py-5">
+		<section id="service-packages" class="pricing-section py-5">
 			<div class="container single-col-max-width">
 				<h3 class="text-center mb-4">Service Packages</h3>
 				<div
@@ -89,7 +89,7 @@
 								<span class="price-number">$2000</span>
 							</td>
 							<td class="pricing-3-data mobile-is-hidden">
-								<span class="price-number">$3600+</span>
+								<span class="price-number">$3800+</span>
 							</td>
 						</tr>
 
@@ -531,19 +531,37 @@
 						<tr class="pricing-cta-row">
 							<td class="pricing-0-data" />
 							<td class="pricing-1-data shown">
-								<button class="btn">
+								<router-link
+									:to="{
+										name: 'contact',
+										query: { package: 0 }
+									}"
+									class="btn"
+								>
 									{{ $t('services.regulars.bookNow') }}
-								</button>
+								</router-link>
 							</td>
 							<td class="pricing-2-data mobile-is-hidden">
-								<button class="btn">
+								<router-link
+									:to="{
+										name: 'contact',
+										query: { package: 1 }
+									}"
+									class="btn"
+								>
 									{{ $t('services.regulars.bookNow') }}
-								</button>
+								</router-link>
 							</td>
 							<td class="pricing-3-data mobile-is-hidden">
-								<button class="btn">
+								<router-link
+									:to="{
+										name: 'contact',
+										query: { package: 2 }
+									}"
+									class="btn"
+								>
 									{{ $t('regulars.hire') }}
-								</button>
+								</router-link>
 							</td>
 						</tr>
 					</tfoot>
@@ -703,10 +721,6 @@
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex'
 import validate from '@/assets/jsComponents/validate'
-
-//true va false shart
-
-
 
 export default {
 	data() {

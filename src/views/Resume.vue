@@ -123,8 +123,8 @@
 									<!-- <i class="fas fa-globe fa-fw fa-lg mr-2"></i> Font Awesome fontawesome.com -->
 									<a
 										class="resume-link"
-										href="https://shokhboz-portfoliov2.netlify.app"
-										>https://shokhboz-portfoliov2</a
+										href="https://shox-pro.com"
+										>https://shox-pro.com</a
 									>
 								</li>
 								<li class="mb-0">
@@ -161,7 +161,7 @@
 					>
 						<img
 							class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 mx-auto"
-							src="../assets/img/me2.jpg"
+							src="@/assets/img/SelfPhoto/photo3.jpg"
 							alt="image"
 						/>
 						<div class="media-body text-left">
@@ -190,15 +190,34 @@
 									<div
 										class="item-heading row align-items-center mb-2"
 									>
-										<h4
-											class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"
-										>
-											Not yet...
-										</h4>
 										<!-- <div class="item-meta col-12 col-md-6 col-lg-4 text-mutedl text-left text-md-right">Startup | 2013 - 2014</div> -->
 									</div>
 									<div class="item-content">
-										<p>Next can be you.</p>
+										<div class="item">
+											<div
+												class="item-heading row align-items-center mb-2"
+											>
+												<h4
+													class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"
+												>
+													Frontend Developer
+												</h4>
+												<div
+													class="item-meta col-16 col-md-6 col-lg-4 text-mutedl text-left text-md-right"
+												>
+													Agency | 2021 - Current
+												</div>
+											</div>
+											<div class="item-content">
+												<p>
+													Team member of
+													<b>Tviser Agency</b> working
+													full time as a creative
+													frontend developer mainly
+													focused on Vue.js
+												</p>
+											</div>
+										</div>
 									</div>
 								</div>
 								<!--//item-->
@@ -220,7 +239,7 @@
 									"
 								>
 									<div
-										v-for="(project) in projects"
+										v-for="project in projects"
 										:key="project._id"
 										class="item mb-3"
 									>

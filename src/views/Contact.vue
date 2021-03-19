@@ -77,24 +77,25 @@
 
 					<span class="focus-input2" data-placeholder="EMAIL" />
 				</div>
-				<!-- <div class="wrap-input2 validate-input select d-flex justify-content-around align-items-center">
-					<div
-						@click="opened = !opened"
-						class="btn d-flex justify-content-around align-items-center"
+				<div class="mb-5">
+					<dropdown
+						class="my-dropdown-toggle"
+						:options="services"
+						@packageSelected="changeSelection"
+						:placeholder="selection"
 					>
-						Select service package
-						<span><i class="fa fa-arrow-alt-down"></i></span>
-					</div>
-					<div :class="{opened}" class="options d-flex justify-content-around align-items-center">
-						<span
-							@click="selectService(p)"
-							v-for="(p, index) in packages"
-							:key="index"
+					</dropdown>
+					<p class="text-center mt-3 mb-0">
+						<router-link
+							tag="a"
+							:to="{
+								name: 'servicesPricing'
+							}"
 						>
-							{{ p }}
-						</span>
-					</div>
-				</div> -->
+							Don't have an idea to select a package?
+						</router-link>
+					</p>
+				</div>
 				<div
 					class="wrap-input2 validate-input"
 					data-validate="Message is required"
@@ -146,6 +147,7 @@ import { mapState } from 'vuex'
 import validate from '@/assets/jsComponents/validate'
 import asyncGetter from '@/assets/jsComponents/asyncGetter'
 import gsap from 'gsap'
+import Dropdown from '@/components/routesComps/Dropdown.vue'
 
 const tl = gsap.timeline({
 	defaults: {
@@ -161,16 +163,24 @@ export default {
 			sending: false,
 			sent: false,
 			msg: '',
+			selection: 'Select a Package',
 			contactInfo: {
 				fullName: '',
 				email: '',
-				msg: ''
-			}
+				msg: '',
+				package: ''
+			},
+			packageRequired: false
 		}
 	},
+
 	methods: {
 		validate,
 		async sendMessage() {
+			if (this.contactInfo.package.length === 0) {
+				this.packageRequired = true
+				return
+			}
 			this.sending = true
 			const { msg } = await asyncGetter('/send-msg', {
 				post: true,
@@ -182,8 +192,10 @@ export default {
 			this.contactInfo = {
 				fullName: '',
 				email: '',
+				package: '',
 				msg: ''
 			}
+			this.selection = 'Select a Package'
 			this.msg = msg
 			this.sending = false
 			document
@@ -206,6 +218,10 @@ export default {
 				'+=0.6'
 			)
 			this.sent = true
+		},
+		changeSelection(index) {
+			this.selection = this.services[index].name + ' Package Selected'
+			this.contactInfo.package = this.services[index].value
 		}
 	},
 	watch: {
@@ -217,8 +233,37 @@ export default {
 			}, 1500)
 		}
 	},
+	components: {
+		Dropdown
+	},
 	computed: {
-		...mapState(['socials'])
+		...mapState(['socials']),
+		services() {
+			return [
+				{
+					name: this.$t('services.packages.basic.title'),
+					value: 'Basic'
+				},
+				{
+					name: this.$t('services.packages.standard.title'),
+					value: 'Standard'
+				},
+				{
+					name: this.$t('services.packages.premium.title'),
+					value: 'Premium'
+				}
+			]
+		}
+	},
+	mounted() {
+		if (this.$route.query.package) {
+			this.contactInfo.package = this.services[
+				this.$route.query.package
+			].value
+			this.selection =
+				this.services[this.$route.query.package].name +
+				' Package Selected'
+		}
 	},
 	head() {
 		return {

@@ -215,13 +215,40 @@
 					</button>
 				</div>
 			</editor-menu-bubble>
-			<div class="">
+			<div class="form-heading">
 				<input
 					v-model="form.heading"
 					placeholder="Give a Title to the Post"
 					type="text"
 					class="h1 w-100 mt-5 editor-title"
 				/>
+			</div>
+			<div class="form-heading">
+				<input
+					v-model="form.poster"
+					placeholder="Poster URL"
+					type="text"
+					class="h6 w-100 mt-5 editor-title"
+				/>
+			</div>
+			<div class="form-heading mt-3">
+				<select
+					class="w-25 editor-title select"
+					v-model="form.posterType"
+				>
+					<option selected value="">Poster Type</option>
+					<option value="image">Image</option>
+					<option value="video">Video</option>
+				</select>
+				<select
+					class="w-25 ml-3 editor-title select"
+					v-model="form.language"
+				>
+					<option selected value="">Blog Language</option>
+					<option value="English">English</option>
+					<option value="Русский">Русский</option>
+					<option value="O'zbek">O'zbek</option>
+				</select>
 			</div>
 			<div
 				class="cover-editor position-absolute w-100 h-100 d-flex justify-content-center align-items-center"
@@ -250,8 +277,10 @@ export default {
 			form: {
 				heading: '',
 				content: Object,
+				poster: '',
+				posterType: '',
 				tag: '',
-				language: 'English'
+				language: '',
 			},
 			publishing: false,
 			html: ''
@@ -272,6 +301,9 @@ export default {
 
 			return tag.trim() + '...'
 		},
+		log() {
+			console.log(this.form)
+		},
 		async addBlog() {
 			this.publishing = true
 			if (this.html.length !== 0) {
@@ -280,7 +312,6 @@ export default {
 
 			if (this.form._id) {
 				await this.updateBlog(this.form)
-				console.log(this.form)
 			} else {
 				await this.postBlog(this.form)
 			}
@@ -309,5 +340,15 @@ export default {
 		backdrop-filter: blur(5px);
 		background: transparent !important;
 	}
+}
+code {
+	overflow-x: scroll;
+	word-break: keep-all;
+}
+.select {
+	background: black;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 5px;
 }
 </style>

@@ -8,10 +8,10 @@
 			<i class="fa fa-edit"></i>
 		</div>
 
-		<modal :height="'auto'" name="login">
+		<modal :draggable="draggable" :height="'auto'" name="login">
 			<login></login>
 		</modal>
-		<modal :height="'auto'" name="logout">
+		<modal :draggable="draggable" :height="'auto'" name="logout">
 			<logout></logout>
 		</modal>
 		<app-header></app-header>
@@ -43,7 +43,10 @@ export default {
 		this.checkUser()
 	},
 	methods: {
-		...mapActions('Auth', ['checkUser'])
+		...mapActions('Auth', ['checkUser']),
+		onResize() {
+			
+		}
 	},
 	head() {
 		return {
@@ -55,7 +58,22 @@ export default {
 		currentYear() {
 			return new Date().getFullYear()
 		},
-		...mapState('Auth', ['adminLoggedIn'])
+		...mapState('Auth', ['adminLoggedIn']),
+		draggable() {
+			const toMatch = [
+				/Android/i,
+				/webOS/i,
+				/iPhone/i,
+				/iPad/i,
+				/iPod/i,
+				/BlackBerry/i,
+				/Windows Phone/i
+			]
+
+			return !toMatch.some((toMatchItem) => {
+				return navigator.userAgent.match(toMatchItem)
+			})
+		}
 	}
 }
 </script>
@@ -73,5 +91,8 @@ export default {
 }
 .vm--modal {
 	background: transparent !important;
+}
+.vm--container {
+	z-index: 1500 !important;
 }
 </style>

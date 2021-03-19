@@ -1,0 +1,38 @@
+@media (max-width: 800px) {
+	.vm--modal {
+		left: 50% !important;
+		transform: translateX(-50%);
+		right: unset !important;
+	}
+}
+@media (max-width: 600px) {
+	.vm--modal {
+		width: 90% !important;
+		.logout-dialog__title {
+			font-size: 24px !important;
+		}
+		.login__description {
+			font-size: 14px !important;
+		}
+		.login {
+			padding: 30px !important;
+		}
+		.contact2-form-btn {
+			width: 75% !important;
+		}
+	}
+
+	.close-btn {
+		right: 5px !important;
+	}
+}
+@media (max-width: 410px) {
+	.vm--modal {
+		.logout-dialog__title {
+			font-size: 20px !important;
+		}
+		.btn-container {
+			margin-top: 50px !important;
+		}
+	}
+}

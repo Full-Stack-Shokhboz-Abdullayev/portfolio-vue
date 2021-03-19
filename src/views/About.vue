@@ -99,14 +99,15 @@
 					</div>
 					<!--//media-body-->
 					<div
-						class="wrapper-img position-relative ml-lg-5 mb-3 mb-lg-0 mr-md-0"
+						ref="img-wrapper"
+						class="wrapper-img profile-image position-relative ml-lg-5 mb-3 mb-lg-0 mr-md-0"
 					>
-						<v-lazy-image
+						<!-- <v-lazy-image
 							class="profile-image"
-							:src="my2"
+							:src="require('@/assets/img/SelfPhoto/photo2.jpg')"
 							src-placeholder=""
 						/>
-						<div class="filter"></div>
+						<div class="filter"></div> -->
 					</div>
 				</div>
 			</div>
@@ -559,7 +560,7 @@
 										class="col-lg-4 card-img-holder project-card-img tr position-relative"
 									>
 										<v-lazy-image
-											:src="my"
+											:src="project.image"
 											:src-placeholder="project.title"
 										/>
 										<div class="filter"></div>
@@ -673,10 +674,19 @@
 						:key="index"
 					>
 						<div class="card blog-post-card">
-							<img
+							<video
+								v-if="blog.posterType === 'video'"
 								class="card-img-top"
-								src="../assets/img/me.jpg"
-								alt="image"
+								preload="metadata"
+								paused="true"
+							>
+								<source :src="blog.poster" type="video/mp4" />
+							</video>
+							<img
+								v-else
+								class="card-img-top"
+								:src="blog.poster"
+								:alt="blog.heading"
 							/>
 							<div class="card-body">
 								<h5 class="card-title">
@@ -761,6 +771,8 @@ import me2 from '@/assets/img/me2.jpg'
 import me from '@/assets/img/me.jpg'
 
 import { mapState, mapActions } from 'vuex'
+import hoverEffect from 'hover-effect'
+
 // eslint-disable no-mixed-spaces-and-tabs
 export default {
 	data() {
@@ -797,11 +809,26 @@ export default {
 				this.setFeaturedProjects()
 			}
 		},
+		initializeHoverEffect() {
+			setTimeout(() => {
+				new hoverEffect({
+					parent: this.$refs['img-wrapper'],
+					image1: require('../assets/img/SelfPhoto/photo2.jpg'),
+					image2: require('../assets/img/SelfPhoto/photo1.jpg'),
+					displacementImage: require('../assets/img/ramen.jpg'),
+					intensity: 0.05,
+					angle: 1 / 12,
+					imagesRatio: 300 / 400
+				})
+			}, 10)
+		},
+
 		...mapActions('Projects', ['setFeaturedProjects']),
 		...mapActions('Blogs', ['setLatestBlogs'])
 	},
 	mounted() {
 		this.$intersectionAnimation()
+		this.initializeHoverEffect()
 	},
 	created() {
 		this.onLoad()

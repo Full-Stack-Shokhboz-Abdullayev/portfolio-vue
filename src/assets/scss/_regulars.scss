@@ -1,3 +1,14 @@
+.rotated-enter {
+	transform: rotateX(90deg);
+}
+.rotated-enter-active {
+	transition: transform 0.3s ease-in-out;
+}
+.rotated-leave-active {
+	transition: transform 0.3s ease-in-out;
+	transform: rotateX(90deg);
+}
+
 // v-lazyimage
 .filter {
 	position: absolute;
@@ -35,6 +46,7 @@
 	width: 5em;
 	height: 5em;
 }
+
 .small-parent {
 	position: absolute;
 	width: 100%;
@@ -182,15 +194,40 @@ a:not(.btn):not(.text-l) {
 		color: darken($color: $primary, $amount: 20%) !important;
 	}
 }
-.btn:not(.btn-secondary):not(.btn-danger):not(.btn-secondary-custom):not(.language-btn):not(.header-hire) {
+
+.sv {
+	background-color: var(--pr-stext) !important;
+	border-radius: 3px;
+}
+.btn:not(.btn-secondary):not(.btn-outline-primary):not(.btn-danger):not(.btn-secondary-custom):not(.language-btn):not(.header-hire) {
 	background-color: $primary;
+	color: #fff !important;
+
 	&:hover {
 		background-color: darken($color: $primary, $amount: 20%) !important;
+	}
+	&.close-btn {
+		color: var(--pr-text) !important;
+		&:hover {
+			color: white !important;
+		}
 	}
 	&.disable {
 		cursor: not-allowed !important;
 		background-color: darken($color: $primary, $amount: 20%) !important;
 	}
+}
+.btn-outline-primary {
+	border-color: $primary;
+	color: var(--#{$pr}-text) !important;
+	&:hover {
+		background: $primary !important;
+		border-color: $primary;
+		color: white !important;
+	}
+}
+.btn:not(.btn-outline-primary) {
+	color: white !important;
 }
 .fa-copyright {
 	color: $primary;
@@ -206,7 +243,6 @@ a:not(.btn):not(.text-l) {
 .btn {
 	font-weight: bold;
 	transition: 0.4s ease-in-out all !important;
-	color: #fff !important;
 
 	// &:active {
 	// 	transform: scale(0.9);
@@ -261,12 +297,12 @@ footer {
 	pointer-events: none;
 }
 .v-router-enter-active {
-	transition: 0.6s ease-in-out all;
+	transition: 0.6s ease-in-out all !important;
 }
 .v-router-leave-active {
 	opacity: 0;
 	pointer-events: none;
-	transition: 0.6s ease-in-out all;
+	transition: 0.6s ease-in-out all !important;
 }
 .slide-enter {
 	opacity: 0;
@@ -318,4 +354,3 @@ footer {
 	pointer-events: none;
 	transition: 0.4s ease-in-out all !important;
 }
-
