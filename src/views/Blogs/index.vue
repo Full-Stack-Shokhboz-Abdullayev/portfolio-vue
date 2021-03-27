@@ -21,7 +21,7 @@
 
 				<transition name="fade" mode="out-in">
 					<form
-					v-if="added"
+					v-if="!added"
 						key="newsletter-form"
 						@submit.prevent="subscribeToNewsletter"
 						class="signup-form form-inline justify-content-center mt-5 pt-3"
@@ -335,6 +335,7 @@ export default {
 					text: data.message,
 					button: 'ok'
 				})
+				this.added = true
 			} else {
 				this.$snack.danger({
 					text: data.error

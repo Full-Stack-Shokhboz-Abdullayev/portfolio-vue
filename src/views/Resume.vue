@@ -203,7 +203,7 @@
 												<h4
 													class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"
 												>
-													Frontend Developer
+													Frontend Developer at Tviser Agency
 												</h4>
 												<div
 													class="item-meta col-16 col-md-6 col-lg-4 text-mutedl text-left text-md-right"
