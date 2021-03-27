@@ -302,7 +302,6 @@ export default {
 			return tag.trim() + '...'
 		},
 		log() {
-			console.log(this.form)
 		},
 		async addBlog() {
 			this.publishing = true

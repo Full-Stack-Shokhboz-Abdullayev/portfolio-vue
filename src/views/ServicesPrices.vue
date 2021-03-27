@@ -534,7 +534,7 @@
 								<router-link
 									:to="{
 										name: 'contact',
-										query: { package: 0 }
+										query: { package: 1 }
 									}"
 									class="btn"
 								>
@@ -545,7 +545,7 @@
 								<router-link
 									:to="{
 										name: 'contact',
-										query: { package: 1 }
+										query: { package: 2 }
 									}"
 									class="btn"
 								>
@@ -556,7 +556,7 @@
 								<router-link
 									:to="{
 										name: 'contact',
-										query: { package: 2 }
+										query: { package: 3 }
 									}"
 									class="btn"
 								>
@@ -701,10 +701,6 @@
 								v-if="newFaq._id"
 								class="btn btn-danger w-25 ml-4"
 							>
-								<app-loading
-									:condition="postLoading"
-									:small="true"
-								></app-loading>
 								Cancel Edit
 							</button>
 						</transition>
@@ -745,10 +741,7 @@ export default {
 	methods: {
 		validate,
 		openUp(event, index) {
-			console.log(event)
-			console.log(index)
 			this.faqs[index].isOpen = !this.faqs[index].isOpen
-			console.log(this.faqs[index].isOpen)
 		},
 		switchPackages(event) {
 			const target = event.target.dataset.target
@@ -797,19 +790,31 @@ export default {
 			this.cancelEditing()
 			// this.postLoading = false
 		},
-		shuffled() {
-			this.faqs = this.faqs.sort(() => 0.5 - Math.random())
-		},
+
 		...mapActions('Faqs', ['setFaqs', 'postFaq', 'deleteFaq', 'updateFaq'])
 	},
 	watch: {
-		newFaq() {
-			console.log(this.faqs)
-		}
+		newFaq() {}
 	},
 	head() {
 		return {
-			title: 'Services & Prices'
+			title: this.$t('header.links.services'),
+			meta: [
+				{
+					name: 'description',
+					content: `${this.$t('services.subtitle1', {
+						projects: this.$t('services.subtitle.projects'),
+						resume: this.$t('services.subtitle.resume')
+					})} ${this.$t('services.subtitle2')}`
+				},
+				{
+					property: 'og:title',
+					content: this.$t('header.links.services')
+				},
+				{ property: 'og:site_name', content: 'shox-pro.com' },
+				{ property: 'og:type', content: 'website' },
+				{ name: 'robots', content: 'index,follow' }
+			]
 		}
 	}
 }

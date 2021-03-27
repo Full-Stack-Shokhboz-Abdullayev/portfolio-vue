@@ -9,7 +9,6 @@ export function onMouseMove(e, index) {
     card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`
 }
 export function onMouseEnter(e, index) {
-    console.log(this.browser)
     if (this.browser === 'Chrome') {
         let btn = document.querySelectorAll('.link-mask')[index],
             title = document.querySelectorAll('.card-title')[index],

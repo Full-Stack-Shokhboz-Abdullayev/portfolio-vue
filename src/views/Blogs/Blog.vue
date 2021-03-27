@@ -15,11 +15,14 @@
 					muted
 					loop
 				/>
-				<div v-else>
+				<div v-else-if="blog.posterType === 'image'">
+					<!-- v-if="!blog.posterType === 'video'" -->
 					<v-lazy-image
 						class="intro__img"
 						:src="blog.poster"
-						:src-placeholder="require('@/assets/img/snow-placeholder.jpg')"
+						:src-placeholder="
+							require('@/assets/img/snow-placeholder.jpg')
+						"
 					/>
 					<div class="filter"></div>
 				</div>
@@ -164,7 +167,6 @@ export default {
 				const fullScreenVideo = document.querySelector(
 					'#fullScreenVideo'
 				)
-				console.log(fullScreenVideo)
 				if (fullScreenVideo) {
 					fullScreenVideo.src = this.blog.poster
 					fullScreenVideo.play()
@@ -197,8 +199,9 @@ export default {
 	head() {
 		return {
 			title: this.blog.heading
-				? this.blog.heading
-				: 'Loading...' + ' | Blog'
+				? this.blog.heading + ` | ${this.$t('header.links.blog')}`
+				: 'Loading...',
+			
 		}
 	},
 

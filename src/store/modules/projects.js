@@ -29,7 +29,6 @@ const mutations = {
 	deleteProject(state, projectId) {
 		const index = state.projects.findIndex((i) => i._id === projectId)
 		Vue.delete(state.projects, index)
-		console.log(state.projects)
 
 		// state.projects = state.projects.filter((i) => i._id !== projectId)
 	},

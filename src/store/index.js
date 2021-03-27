@@ -33,10 +33,6 @@ const store = new Vuex.Store({
 			{
 				icon: 'fa-instagram',
 				link: 'https://www.instagram.com/just__a__developer/'
-			},
-			{
-				icon: 'fa-behance',
-				link: ''
 			}
 		]
 	},
@@ -44,7 +40,6 @@ const store = new Vuex.Store({
 	mutations: {
 		toggleEditMode(state) {
 			state.editMode = !state.editMode
-			console.log(state.editMode)
 		}
 	},
 

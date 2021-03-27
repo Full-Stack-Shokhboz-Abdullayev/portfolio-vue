@@ -1,7 +1,7 @@
 {
   "about": {
     "description": {
-      "all": "Men bir yillik tajribali bo'lgan, Vue.js va Express dan foydalanib ajoyib, ishonchli, ta'sirchan, avtomatlashtirilgan, jozibali, yagona sahifali veb-dasturlarni tuzgan junior full stack dasturchiman. Endi eski qayta yuklanadigan veb-saytlarni unuting. Mening  {resume}im bilan tanishib chiqing yoki {projects}imni ko'rib chiqing.",
+      "all": "Men bir yillik tajribali bo'lgan, Vue.js va Express dan foydalanib ajoyib, ishonchli, ta'sirchan, avtomatlashtirilgan, jozibali, yagona sahifali veb-dasturlarni tuzgan full stack dasturchiman. Endi eski qayta yuklanadigan veb-saytlarni unuting. Mening  {resume}im bilan tanishib chiqing yoki {projects}imni ko'rib chiqing.",
       "projects": "loyihalar",
       "resume": "rezyume"
     },
@@ -9,22 +9,37 @@
       "featured": "Saralangan Loyihalar",
       "lbp": "So'nggi Bloglar",
       "wid": {
-        "tagline": "Mening bir yil davomida shaxsiy loyihalar tuzish bilan tajribam bor. Ajoyib veb-ilovalarni tuzish uchun foydalanadigan narsalar haqida qisqacha ma'lumot.",
+        "tagline": "Mening bir yil davomida loyihalar tuzish bilan tajribam bor. Ajoyib veb-ilovalarni tuzish uchun foydalanadigan texnologiyalar haqida qisqacha ma'lumot.",
         "title": "Men nima qilaman"
       }
     },
-    "tagline": "Junior Full Stack Dasturchi "
+    "skillset": {
+      "html-css-sass": "Internet asoslari. \nHTML - giper matnni belgilash tili; \nCSS - Stillar Kaskadli Jadvallari; \nSass - CSS oldingi protsessori, qisqa kod va samarali natija.",
+      "js": "JavaScript - veb-manbasi. Mening eng sevimli dasturlash tilim. Oddiy va sifatli kod biz bilgan barcha yaxshi narsalarni qiladi.",
+      "mongo-postgre": "To'liq tugallangan veb-saytlarni tuzish uchun ma'lumotlar bazalari. Barcha ma'lumotlar ushbu texnologiyalarda saqlanadi.",
+      "node-express": "JavaScript mijoz tomonidan server tomoniga o'tadi. Ajoyib ko'rinadi, shunday emasmi? Node.js orqa fonda ma'lumotlarni saqlash uchun yordam beradi. Express.js yordamida biz osonlikcha MVC andozasini yoki zamonaviy REST API-ni tuzishimiz mumkin.",
+      "npm-gulp": "npm - Node.js paketlar menejeri. Gulp - Node.js shartlar ketma ketligi tuzuvchisi.",
+      "python-django": "Python mening birinchi o'rgangan tilim bo'lgan oson, samarali dasturlash tili. Ko'pincha Python-ni avtomatlashtirish uchun ishlataman. Django - bu Python-ning Express.js-ga o'xshash veb-freymvorki.",
+      "vue-react": "Ushbu ikkita freymvorklar (React bu kutubxona) Javascript dasturchining yo'lidir. Sahifalar hatto qayta yuklanmaydi va juda ham dinamik. Menga eng yoqadigani Vue."
+    },
+    "tagline": "Full Stack Dasturchi "
   },
   "blog": {
     "language": "til",
     "subtitle": "Blogimga xush kelibsiz. Obuna bo'ling va mening blogimdagi so'nggi xabarlarni pochta qutingizda qabul qiling.",
-    "title": "Dasturiy ta'minotni ishlab chiqish va Hayot haqida Blog"
+    "title": "Dasturiy ta'minotni ishlab chiqish va Hayot haqida Blog",
+    "search": "Qidirish uchun bu yerga yozishni boshlang."
   },
   "contact": {
     "form": {
       "email": "El-pochta",
       "fullName": "To'liq Ism",
       "message": "Xabar",
+      "select": {
+        "package-selected": "Paket Tanlandi",
+        "text": "Paketni Tanlang",
+        "tip": "Paketni tanlash haqida ikkilanyapsizmi?"
+      },
       "send": "Xabarni Jo'natish"
     },
     "subtitle1": "Meni loyihangizga yollamoqchimisiz yoki salom aytishni xohlaysizmi? Siz quyida joylashgan aloqa shaklini to'ldirishingiz yoki {email} elektron manziliga elektron pochta xabarini yuborishingiz mumkin.",
@@ -35,7 +50,7 @@
   },
   "footer": {
     "copyright": "Copyright {year}. Barcha huquqlar himoyalangan. {pp}.",
-    "madeBy": "{beliefyLink} jamoasi a'zosi {owner} tomonidan tayyorlandi.",
+    "madeBy": "{owner} tomonidan tayyorlandi.",
     "pp": "Maxfiylik siyosati"
   },
   "header": {
@@ -52,7 +67,7 @@
   },
   "owner": "Shoxboz Abdullayev",
   "projects": {
-    "description": "Onlayn portfolioga xush kelibsiz. Ayni paytda men mustaqil ish bilan shug'ullanmoqdaman. Dasturiy ta'minotni yaratishda yordam xohlaysizmi?",
+    "description": "Onlayn portfolioga xush kelibsiz. Ayni paytda men mustaqil ish bilan shug'ullanmoqdaman. Dasturiy ta'minotni tuzishda yordam xohlaysizmi?",
     "filters": {
       "all": "Barcha",
       "backend": "Backend",
@@ -83,6 +98,7 @@
       "skills": "QOBILIYATLAR",
       "workExperience": "ISH TAJRIBASI"
     },
+    "subtitle": "Bu yerda siz mening qo'shimcha qobiliyatlarim va ishga tayyor rezyumeim bilan tanishishingiz mumkin.",
     "title": "Onlayn Rezyume"
   },
   "services": {

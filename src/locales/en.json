@@ -1,7 +1,7 @@
 {
   "about": {
     "description": {
-      "all": "I'm a junior full stack developer with a year of experience using Vue.js and Django Rest Framework to build awesome, reliable, responsive, automated, attractive Single Page Applications. Just forget about old reloading web sites. See further in my {projects} or check out my {resume}.",
+      "all": "I'm a full-stack developer with a year of experience using Vue.js and Express.js to build awesome, reliable, responsive, automated, attractive Single Page Applications. Just forget about old reloading web sites. See further in my {projects} or check out my {resume}.",
       "projects": "projects",
       "resume": "resume"
     },
@@ -9,22 +9,37 @@
       "featured": "Featured Projects",
       "lbp": "Latest Blog Posts",
       "wid": {
-        "tagline": "I have experience with the web for a year building personal projects. Here's the quick overview of what I use to build cool web apps.",
+        "tagline": "I have experience with the web for a year building commercial and personal projects. Here's the quick overview of what I use to build cool web apps.",
         "title": "What I do"
       }
     },
-    "tagline": "Junior Full Stack Developer"
+    "skillset": {
+      "html-css-sass": "Basics of the web. HTML - Hyper Text Markup Language; CSS - Cascading Style Sheets; Sass - CSS pre-proccessor, shorter code and effective result.",
+      "js": "JavaScript - the source of the web. My most favourite programming language. Simple, High-Quality code does all the good things we know.",
+      "mongo-postgre": "Databases to build fully completed websites. All Data are stored in these technologies.",
+      "node-express": "JavaScript moves from client-side to server-side. Seems cool, isn't it? Node.js does support data saving in the backend. With the help of Express.js, we could make an MVC pattern or modern REST API in an easy way.",
+      "npm-gulp": "npm - Node.js Package Manager. Gulp - Node.js pipeline builder.",
+      "python-django": "Python an easy, effective programming language that is my first learnt language. Mostly I use Python for automation. Django is Python's Web framework similar to Express.js.",
+      "vue-react": "These two frameworks (React is a library) are the way of the JavaScript developer. Pages are very dynamic without even reloading. My most liked is Vue."
+    },
+    "tagline": "Full Stack Developer"
   },
   "blog": {
     "language": "language",
     "subtitle": "Welcome to my blog. Subscribe and get my latest blog posts in your inbox.",
-    "title": "A Blog About Software Development And Life"
+    "title": "A Blog About Software Development And Life",
+    "search": "Start typing here to search instantly."
   },
   "contact": {
     "form": {
       "email": "Email",
       "fullName": "Full Name",
       "message": "Message",
+      "select": {
+        "package-selected": "Package Selected",
+        "text": "Select a Package",
+        "tip": "Don't have an idea to select a package?"
+      },
       "send": "Send The Message"
     },
     "subtitle1": "Interested in hiring me for your project or just want to say hi? You can fill in the contact form below or send me an email to {email}.",
@@ -35,7 +50,7 @@
   },
   "footer": {
     "copyright": "Copyright {year}. All rights reserved. {pp}.",
-    "madeBy": "Made by {owner} from {beliefyLink} team.",
+    "madeBy": "Made by {owner}.",
     "pp": "Privacy policy"
   },
   "header": {
@@ -80,6 +95,7 @@
       "skills": "SKILLS",
       "workExperience": "WORK EXPERIENCE"
     },
+    "subtitle": "Here you could be familiar with my extra skills and work-ready resume.",
     "title": "Online Resume"
   },
   "services": {

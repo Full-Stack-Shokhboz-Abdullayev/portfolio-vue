@@ -55,14 +55,12 @@ export default async (url, options = {}, afterWards = '') => {
 		}
 		try {
 			data = await fetch(_BASE + url + `/${_id}` + afterWards, apiObject)
-		} catch {
-			console.log('Problem Occured')
+		} catch (err) {
+			console.log(err)
 		}
 	}
 
 	data = await data.json()
 	const returningData = data.data ? data.data : data
-	console.log(returningData)
-	console.log('Success: ', data.success)
 	return returningData
 }

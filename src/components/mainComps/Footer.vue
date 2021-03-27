@@ -1,9 +1,9 @@
 <template>
 	<footer class="footer text-center py-4">
 		<i18n tag="small" path="footer.madeBy">
-			<template v-slot:beliefyLink>
-				<a href="">beliefy.io</a>
-			</template>
+			<!-- <template v-slot:beliefyLink>
+				<a href="https://tviser.agency">Tviser Agency</a>
+			</template> --> 
 			<template v-slot:owner>
 				{{ $t('owner') }}
 			</template>
@@ -13,7 +13,7 @@
 			<i class="fa fa-copyright"/> 
 			<i18n class="copyright ml-2"  tag="span" path="footer.copyright">
 				<template v-slot:pp> 
-					<a href="">{{$t('footer.pp')}}</a>
+					<a href="#">{{$t('footer.pp')}}</a>
 				</template>
 				<template v-slot:year> 
 					{{currentYear}}

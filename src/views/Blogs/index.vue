@@ -8,7 +8,7 @@
 				<div class="intro">
 					{{ $t('blog.subtitle') }}
 				</div>
-				<transition name="rotated">
+				<!-- <transition name="rotated">
 					<div
 						v-if="!response.success && response.error.length > 0"
 						class="error-message w-75 d-block mx-auto text-light rounded bg-danger mt-5 p-3"
@@ -17,21 +17,12 @@
 							{{ response.error }}
 						</p>
 					</div>
-				</transition>
+				</transition> -->
 
-				<transition name="newsletter-added" mode="out-in">
-					<div
-						key="success-message"
-						v-if="response.success && response.message.length > 0"
-						class="success-message mt-5 p-2 rounded w-75 d-block mx-auto"
-					>
-						<p class="text-light">
-							{{ response.message }}
-						</p>
-					</div>
+				<transition name="fade" mode="out-in">
 					<form
+					v-if="added"
 						key="newsletter-form"
-						v-if="!response.success"
 						@submit.prevent="subscribeToNewsletter"
 						class="signup-form form-inline justify-content-center mt-5 pt-3"
 					>
@@ -90,7 +81,7 @@
 					<input
 						class="search-bar shadow"
 						type="text"
-						placeholder="Start typing here to search instantly."
+						:placeholder="$t('blog.search')"
 						v-model="searchInput"
 					/>
 					<div class="after"></div>
@@ -293,11 +284,7 @@ export default {
 			subscribing: false,
 			searchInput: '',
 			blogsLoading: true,
-			response: {
-				success: false,
-				message: '',
-				error: ''
-			}
+			added: false
 		}
 	},
 	computed: {
@@ -342,12 +329,18 @@ export default {
 				}
 			})
 			if (data.success) {
-				this.response.success = data.success
-				this.response.message = data.message
+				// this.response.success = data.success
+				// this.response.message = data.message
+				this.$snack.success({
+					text: data.message,
+					button: 'ok'
+				})
 			} else {
-				this.response.error = data.error
+				this.$snack.danger({
+					text: data.error
+				})
 			}
-			this.subscribing = true
+			this.subscribing = false
 		},
 		async showBlogs() {
 			if (this.blogPosts.length === 0) {
@@ -376,7 +369,22 @@ export default {
 
 	head() {
 		return {
-			title: 'Blogs'
+			title: this.$t('header.links.blog'),
+			meta: [
+				{
+					name: 'description',
+					content: `${this.$t('blog.title')} ${this.$t(
+						'blog.subtitle'
+					)}`
+				},
+				{
+					property: 'og:title',
+					content: this.$t('header.links.blog')
+				},
+				{ property: 'og:site_name', content: 'shox-pro.com' },
+				{ property: 'og:type', content: 'website' },
+				{ name: 'robots', content: 'index,follow' }
+			]
 		}
 	},
 	created() {
@@ -388,4 +396,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss"></style>

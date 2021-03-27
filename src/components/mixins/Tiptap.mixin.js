@@ -77,7 +77,6 @@ export const Tiptap = {
 				],
 				onUpdate: ({ getJSON, getHTML }) => {
 					this.form.content = getJSON()
-					console.log(this.form)
 					this.html = getHTML()
 				}
 			})
@@ -123,7 +122,6 @@ export const Tiptap = {
 				})
 			}
 			this.blog = { ...blog }
-			console.log(this.blog)
 			this.editor.setContent(blog.content)
 		},
 		async editingExisting() {

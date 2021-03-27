@@ -394,7 +394,6 @@ export default {
 		//update function
 		startEditing(project) {
 			this.newProject = { ...project }
-			console.log(this.newProject)
 			document
 				.querySelectorAll('.project-post-form .wrap-input2')
 				.forEach((i) => {
@@ -469,7 +468,20 @@ export default {
 	},
 	head() {
 		return {
-			title: 'Projects'
+			title: this.$t('header.links.projects'),
+			meta: [
+				{
+					name: 'description',
+					content: this.$t('projects.description')
+				},
+				{
+					property: 'og:title',
+					content: this.$t('header.links.projects')
+				},
+				{ property: 'og:site_name', content: 'shox-pro.com' },
+				{ property: 'og:type', content: 'website' },
+				{ name: 'robots', content: 'index,follow' }
+			]
 		}
 	}
 }

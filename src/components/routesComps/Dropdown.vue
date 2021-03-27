@@ -45,11 +45,7 @@ export default {
 		delay: 0,
 		forced: false
 	}),
-	computed: {
-		selected() {
-			return this.placeholder.includes('Selected')
-		}
-	},
+	
 	methods: {
 		showDropdown() {
 			this.isOpen = true
@@ -71,7 +67,8 @@ export default {
 	},
 	props: {
 		placeholder: String,
-		options: Array
+		options: Array,
+		selected: Boolean
 	}
 }
 </script>

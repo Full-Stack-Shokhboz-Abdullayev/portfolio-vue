@@ -375,7 +375,6 @@ export default {
 		onSwitch() {
 			this.darkOn = !this.darkOn
 			localStorage.setItem('darkOn', this.darkOn)
-			console.log(localStorage.getItem('darkOn'))
 			document.body.classList.toggle('dark')
 		},
 		openPages() {

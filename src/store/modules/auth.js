@@ -12,11 +12,9 @@ const state = {
 
 const mutations = {
 	login(state, user) {
-		console.log(user)
 		state.adminLoggedIn = user.role === 'admin'
 	},
 	logout(state) {
-		console.log(state)
 		state.adminLoggedIn = false
 		localStorage.removeItem('jid256')
 	}
@@ -46,7 +44,6 @@ const actions = {
 			body: {},
 			requiresAuth: true
 		})
-		console.log('Respond from auth store module.')
 		if (response.success) {
 			commit('login', response.user)
 		} else if (!response.success) {
@@ -56,7 +53,6 @@ const actions = {
 
 	async logout({ commit }) {
 		const data = await asyncGetter('/auth/logout', { get: true })
-		console.log(data)
 
 		if (data.success) {
 			commit('logout')

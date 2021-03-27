@@ -41,7 +41,7 @@ const routes = [
 		component: Projects
 	},
 	{
-		path: '/services-pricing',
+		path: '/services-and-pricing',
 		name: 'servicesPricing',
 		component: ServicesPrices
 	},
@@ -98,20 +98,15 @@ const routes = [
 
 			if (blogPosts.length !== 0) {
 				let slugs = blogPosts.map((i) => i.slug)
-				console.log(slugs)
 				const routeSlug = to.params.slug
-				console.log(routeSlug)
-				console.log(slugs.includes(routeSlug))
 
 				if (slugs.includes(routeSlug)) {
-					console.log('contains!')
 					return next()
 				}
 			} else {
 				const data = await asyncGetter('/blogs/' + to.params.slug, {
 					get: true
 				})
-				console.log(data)
 				if (!data.error) {
 					return next()
 				}

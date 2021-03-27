@@ -5,11 +5,14 @@
 		<section class="cta-section theme-bgs py-5">
 			<div class="container text-center single-col-max-width">
 				<h2 class="heading mb-3">{{ $t('resume.title') }}</h2>
-				<button
+				<p class="my-4">{{ $t('resume.subtitle') }}</p>
+				<a
+					download=""
+					href="/assets/Shokhboz_Abdullayev_DevResume.pdf"
 					class="btn position-relative"
 					:class="{ disable: loading }"
-					@click="downloadWithCSS"
 				>
+					<!-- @click="downloadWithCSS" -->
 					<svg
 						class="svg-inline--fa fa-file-pdf fa-w-12 mr-2"
 						aria-hidden="true"
@@ -32,7 +35,7 @@
 						v-if="loading"
 					></app-loading>
 					{{ $t('resume.download') }}
-				</button>
+				</a>
 			</div>
 			<!--//container-->
 		</section>
@@ -254,7 +257,12 @@
 											<div
 												class="item-meta col-12 col-md-6 col-lg-4 text-mutedl text-left text-md-right"
 											>
-												Open Source
+												{{
+													project.client.toLowerCase() !==
+													'self'
+														? project.client
+														: 'Open Source'
+												}}
 											</div>
 										</div>
 										<div class="item-content">
@@ -360,7 +368,12 @@
 									<li class="mb-2">
 										English
 										<span class="text-mutedl"
-											>(Upper-Intermediete)</span
+											>(Proficient |
+											<a
+												href="/assets/IELTS.PDF"
+												target="_blank"
+												>IELTS 6.0</a
+											>)</span
 										>
 									</li>
 									<li class="mb-2">
@@ -491,8 +504,6 @@
 
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex'
-import html2pdf from 'html2pdf.js'
-// import { DocRaptor } from '@/components/jsComponents/docRaptor.js'
 export default {
 	data() {
 		return {
@@ -509,44 +520,24 @@ export default {
 		}
 	},
 	methods: {
-		async downloadWithCSS() {
-			if (this.loading !== true) {
-				const el = this.$refs.resum
-
-				this.loading = true
-				var opt = {
-					margin: 0,
-					filename: this.$t('owner') + '.pdf',
-					image: { type: 'png' },
-					pagebreak: { mode: ['avoid-all'] },
-					html2canvas: { scale: 2 },
-					jsPDF: {
-						unit: 'in',
-						format: 'letter',
-						orientation: 'landscape'
-					}
-				}
-				await html2pdf().set(opt).from(el).save()
-				this.loading = false
-			}
-		},
-		// downloadPDF() {
-		// 	DocRaptor.createAndDownloadDoc('YOUR_API_KEY_HERE', {
-		// 		test: true, // test documents are free, but watermarked
-		// 		type: 'pdf',
-		// 		document_content: this.$refs.resum.innerHTML, // use this page's HTML
-		// 		prince_options: {
-		// 			media: 'screen' // use screen styles instead of print styles
-		// 		},
-		// 		javascript: true // enable JavaScript processing
-		// 		// or use a URL
-		// 	})
-		// },
 		...mapActions('Projects', ['setProjects'])
 	},
 	head() {
 		return {
-			title: 'Resume'
+			title: this.$t('header.links.resume'),
+			meta: [
+				{
+					name: 'description',
+					content: this.$t('resume.subtitle')
+				},
+				{
+					property: 'og:title',
+					content: this.$t('header.links.resume')
+				},
+				{ property: 'og:site_name', content: 'shox-pro.com' },
+				{ property: 'og:type', content: 'website' },
+				{ name: 'robots', content: 'index,follow' }
+			]
 		}
 	}
 }

@@ -82,8 +82,10 @@
 						class="my-dropdown-toggle"
 						:options="services"
 						@packageSelected="changeSelection"
-						:placeholder="selection"
+						:selected="selected"
+						:placeholder="placeholder"
 					>
+						<!-- :selectText="" -->
 					</dropdown>
 					<p class="text-center mt-3 mb-0">
 						<router-link
@@ -92,7 +94,7 @@
 								name: 'servicesPricing'
 							}"
 						>
-							Don't have an idea to select a package?
+							{{ $t('contact.form.select.tip') }}
 						</router-link>
 					</p>
 				</div>
@@ -163,7 +165,7 @@ export default {
 			sending: false,
 			sent: false,
 			msg: '',
-			selection: 'Select a Package',
+			selection: '',
 			contactInfo: {
 				fullName: '',
 				email: '',
@@ -220,7 +222,9 @@ export default {
 			this.sent = true
 		},
 		changeSelection(index) {
-			this.selection = this.services[index].name + ' Package Selected'
+			this.selection =
+				this.services[index].name +
+				` ${this.$t('contact.form.select.package-selected')}`
 			this.contactInfo.package = this.services[index].value
 		}
 	},
@@ -253,21 +257,49 @@ export default {
 					value: 'Premium'
 				}
 			]
+		},
+		placeholder() {
+			return this.selection.length !== 0
+				? this.selection
+				: this.$t('contact.form.select.text')
+		},
+		selected() {
+			return this.placeholder !== this.$t('contact.form.select.text')
 		}
 	},
 	mounted() {
 		if (this.$route.query.package) {
-			this.contactInfo.package = this.services[
-				this.$route.query.package
-			].value
-			this.selection =
-				this.services[this.$route.query.package].name +
-				' Package Selected'
+			this.changeSelection(new Number(this.$route.query.package) - 1)
 		}
 	},
+	// beforeRouteUpdate() {
+	// 	if (this.$route.query.package) {
+	// 		this.changeSelection(Number(this.$route.query.package))
+	// 	}
+	// },
+	// beforeRouteEnter(to, from, next) {
+	// 	next((vm) => {
+	// 		if (vm.$route.query.package) {
+	// 			vm.changeSelection(Number(vm.$route.query.package))
+	// 		}
+	// 	})
+	// },
 	head() {
 		return {
-			title: 'Contact'
+			title: this.$t('header.links.contact'),
+			meta: [
+				{
+					name: 'description',
+					content: this.$t('contact.subtitle2')
+				},
+				{
+					property: 'og:title',
+					content: this.$t('header.links.contact')
+				},
+				{ property: 'og:site_name', content: 'shox-pro.com' },
+				{ property: 'og:type', content: 'website' },
+				{ name: 'robots', content: 'index,follow' }
+			]
 		}
 	}
 }
