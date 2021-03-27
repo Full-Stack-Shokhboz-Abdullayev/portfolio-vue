@@ -8,11 +8,10 @@
 				<p class="my-4">{{ $t('resume.subtitle') }}</p>
 				<a
 					download=""
-					href="/assets/Shokhboz_Abdullayev_DevResume.pdf"
+					href="/assets/Shokhboz__Abdullaev__Resume.pdf"
 					class="btn position-relative"
 					:class="{ disable: loading }"
 				>
-					<!-- @click="downloadWithCSS" -->
 					<svg
 						class="svg-inline--fa fa-file-pdf fa-w-12 mr-2"
 						aria-hidden="true"
@@ -79,7 +78,7 @@
 									><!-- <i class="fas fa-phone-square fa-fw fa-lg mr-2 "></i> Font Awesome fontawesome.com --><a
 										class="resume-link"
 										href="tel:+998993902655"
-										>+998993902655</a
+										>+998-99-390-2655</a
 									>
 								</li>
 								<li class="mb-2">
@@ -102,8 +101,7 @@
 										target="_blank"
 										class="resume-link"
 										href="mailto:shokhboz11abdullayev@gmail.com"
-									>
-										shokhboz11abdullayev</a
+										>shokhboz11abdullayev</a
 									>
 								</li>
 								<li class="mb-2">
@@ -145,10 +143,8 @@
 										<path
 											fill="currentColor"
 											d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
-										/>
-									</svg>
-									<!-- <i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i> Font Awesome fontawesome.com -->
-									Uzbekistan, Khavast city
+										/></svg
+									>Uzbekistan, Khavast city
 								</li>
 							</ul>
 						</div>
@@ -203,12 +199,12 @@
 												<h4
 													class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"
 												>
-													Frontend Developer at Tviser Agency
+													Frontend Developer
 												</h4>
 												<div
 													class="item-meta col-16 col-md-6 col-lg-4 text-mutedl text-left text-md-right"
 												>
-													Agency | 2021 - Current
+													Tviser | 2021 - Present
 												</div>
 											</div>
 											<div class="item-content">
@@ -268,6 +264,9 @@
 										<div class="item-content">
 											<p>
 												{{ project.description }}
+												<a :href="project.url">
+													{{ project.url }}
+												</a>
 											</p>
 										</div>
 									</div>
@@ -292,8 +291,12 @@
 										class="list-unstyled resume-skills-list"
 									>
 										<li class="mb-2">HTML/CSS/Sass</li>
-										<li class="mb-2">JavaScript/Vue</li>
-										<!-- <li class="mb-2">Node/Express</li> -->
+										<li class="mb-2">
+											JavaScript/Vue/React
+										</li>
+										<li class="mb-2">
+											NodeJs/Express/Mongo
+										</li>
 										<li class="mb-2">Python/Django</li>
 										<li class="mb-2">Git/Github</li>
 										<li>Heroku/Netlify deployment</li>
