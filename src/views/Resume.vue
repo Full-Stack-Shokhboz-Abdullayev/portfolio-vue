@@ -258,7 +258,7 @@
 												class="item-meta col-12 col-md-6 col-lg-4 text-mutedl text-left text-md-right"
 											>
 												{{
-													project.client.toLowerCase() !==
+													!project.client.toLowerCase() !==
 													'self'
 														? project.client
 														: 'Open Source'
