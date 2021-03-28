@@ -396,6 +396,14 @@ a:not(.btn):not(.text-l):not(.resume-link):hover {
   color: white !important;
 }
 
+.btn:not(.btn-secondary):not(.btn-outline-primary):not(.btn-danger):not(.btn-secondary-custom):not(.language-btn):not(.header-hire).inactive {
+  color: var(--pr-text) !important;
+}
+
+.btn:not(.btn-secondary):not(.btn-outline-primary):not(.btn-danger):not(.btn-secondary-custom):not(.language-btn):not(.header-hire).inactive:hover {
+  color: white !important;
+}
+
 .btn:not(.btn-secondary):not(.btn-outline-primary):not(.btn-danger):not(.btn-secondary-custom):not(.language-btn):not(.header-hire).disable {
   cursor: not-allowed !important;
   background-color: #317355 !important;

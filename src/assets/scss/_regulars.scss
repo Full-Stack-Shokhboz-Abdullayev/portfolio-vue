@@ -212,6 +212,12 @@ a:not(.btn):not(.text-l) {
 			color: white !important;
 		}
 	}
+	&.inactive {
+		color: var(--pr-text) !important;
+		&:hover {
+			color: white !important;
+		}
+	}
 	&.disable {
 		cursor: not-allowed !important;
 		background-color: darken($color: $primary, $amount: 20%) !important;

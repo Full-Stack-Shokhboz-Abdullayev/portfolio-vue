@@ -827,7 +827,7 @@ export default {
 .ease-in-out {
 	transition: 0.4s ease-in-out all;
 }
-.inactive {
+.btn.pricing-tab.inactive {
 	background: var(--pr-sbg) !important;
 	color: var(--pr-text) !important;
 }
