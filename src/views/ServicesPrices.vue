@@ -882,7 +882,6 @@ export default {
 	position: absolute;
 	z-index: -10;
 }
-
 .list-item-move {
 	transition: 0.6s ease all !important;
 }
