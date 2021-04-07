@@ -19,7 +19,6 @@
 								:src="
 									require('@/assets/img/SelfPhoto/photo3-min.jpg')
 								"
-								src-placeholder="Hello"
 							/>
 							<div class="filter"></div>
 						</div>
@@ -304,7 +303,6 @@
 </template>
 
 <script>
-import me2 from '@/assets/img/me2.jpg'
 import { mapState } from 'vuex'
 export default {
 	data() {
@@ -324,9 +322,6 @@ export default {
 		},
 		selectedLang() {
 			return this.$i18n.locale
-		},
-		me2() {
-			return me2
 		}
 	},
 	created() {

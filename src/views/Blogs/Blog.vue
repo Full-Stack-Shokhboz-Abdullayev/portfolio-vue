@@ -17,13 +17,7 @@
 				/>
 				<div v-else-if="blog.posterType === 'image'">
 					<!-- v-if="!blog.posterType === 'video'" -->
-					<v-lazy-image
-						class="intro__img"
-						:src="blog.poster"
-						:src-placeholder="
-							require('@/assets/img/snow-placeholder.jpg')
-						"
-					/>
+					<v-lazy-image class="intro__img" :src="blog.poster" />
 					<div class="filter"></div>
 				</div>
 				<!-- src="https://vod-progressive.akamaized.net/exp=1613935449~acl=%2A%2F401809133.mp4%2A~hmac=ba75355cb52f078394df753df3b22ab779191ca9049e095ccf23416b2ba26064/vimeo-prod-skyfire-std-us/01/2147/5/135735293/401809133.mp4?filename=Smartphone+-+90.mp4" -->
@@ -200,8 +194,7 @@ export default {
 		return {
 			title: this.blog.heading
 				? this.blog.heading + ` | ${this.$t('header.links.blog')}`
-				: 'Loading...',
-			
+				: 'Loading...'
 		}
 	},
 

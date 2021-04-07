@@ -89,7 +89,7 @@
 									<div class="card-body">
 										<h5 class="card-title">
 											<a
-												href="project.html"
+												:href="project.url"
 												class="theme-link"
 												>{{ project.title }}</a
 											>
@@ -321,7 +321,6 @@
 import isotope from 'vueisotope'
 import { mapActions, mapState, mapGetters } from 'vuex'
 import validate from '@/assets/jsComponents/validate'
-import me from '@/assets/img/me.jpg'
 
 String.prototype.title = function () {
 	return this.split(' ')
@@ -440,9 +439,7 @@ export default {
 	},
 	computed: {
 		// vuex getters
-		me() {
-			return me
-		},
+
 		...mapState(['editMode']),
 		...mapState('Projects', ['projects']),
 		projectsWrapper() {
