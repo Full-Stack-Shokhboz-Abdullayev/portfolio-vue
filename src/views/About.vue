@@ -784,8 +784,8 @@ export default {
 			setTimeout(() => {
 				new hoverEffect({
 					parent: this.$refs['img-wrapper'],
-					image1: require('../assets/img/SelfPhoto/photo2.jpg'),
-					image2: require('../assets/img/SelfPhoto/photo1.jpg'),
+					image1: require('../assets/img/SelfPhoto/photo2-min.jpg'),
+					image2: require('../assets/img/SelfPhoto/photo1-min.jpg'),
 					displacementImage: require('../assets/img/ramen.jpg'),
 					intensity: 0.05,
 					angle: 1 / 12,

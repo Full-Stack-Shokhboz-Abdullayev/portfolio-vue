@@ -17,7 +17,7 @@
 						<div class="mb-3 position-relative header-img">
 							<v-lazy-image
 								:src="
-									require('@/assets/img/SelfPhoto/photo3.jpg')
+									require('@/assets/img/SelfPhoto/photo3-min.jpg')
 								"
 								src-placeholder="Hello"
 							/>
