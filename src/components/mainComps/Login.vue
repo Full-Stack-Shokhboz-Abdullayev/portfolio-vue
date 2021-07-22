@@ -1,5 +1,5 @@
 <template>
-	<div class="theme-bg-light login">
+	<div class="theme-bg-light login touch-action">
 		<h3 class="login__title text-center mb-3">Login as Admin.</h3>
 		<p class="login__description mb-5 text-center">
 			To manage the website you need first authorization.

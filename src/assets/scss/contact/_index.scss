@@ -2,6 +2,14 @@
 	font-size: 1.575rem;
 }
 .container-contact2 {
+	svg {
+		width: 56px;
+		stroke: white;
+		stroke-width: 5;
+		stroke-dasharray: 70;
+		stroke-dashoffset: 0;
+		fill: transparent;
+	}
 	padding: 20px;
 	width: 100%;
 	align-items: center;
@@ -115,6 +123,54 @@ div.wrap-input2 {
 		.cword {
 			transform: translateY(-30px);
 		}
+	}
+}
+
+// .main-wrapper {
+// 	width: calc(100% - 280px);
+// 	min-height: 100vh;
+// 	background-size: cover;
+// 	background-repeat: no-repeat;
+
+// 	background-position: center;
+// }
+.message-sent {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	font-size: 20px !important;
+}
+.message-animation-enter {
+	transform: translateY(20px);
+	opacity: 0;
+	pointer-events: none;
+}
+.message-animation-leave-active {
+	transform: translateY(-20px);
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.4s ease-in-out all;
+}
+.message-animation-enter-active {
+	transition: 0.4s ease-in-out all;
+}
+
+.ct {
+	position: absolute;
+	width: 100%;
+	background: #54b689 !important;
+	height: 100%;
+	display: flex;
+	opacity: 0;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	transition: 0.3s ease opacity;
+	&.shown {
+		transition-delay: 0.4s;
+		opacity: 1;
 	}
 }
 

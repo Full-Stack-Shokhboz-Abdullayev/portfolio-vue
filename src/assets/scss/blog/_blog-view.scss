@@ -22,11 +22,9 @@
 }
 .particular-blog {
 	.intro {
-		// margin-bottom: 40px;
 		width: calc(100% - 280px);
 		position: relative;
 		height: auto !important;
-		// top: 0;
 		position: fixed;
 
 		&__img {
@@ -35,9 +33,6 @@
 			margin: auto;
 			width: 100% !important;
 			position: unset !important;
-			// -webkit-box-shadow: 0px 0px 28px -2px rgba(34, 60, 80, 0.4);
-			// -moz-box-shadow: 0px 0px 28px -2px rgba(34, 60, 80, 0.4);
-			// box-shadow: 0px 0px 28px -2px rgba(34, 60, 80, 0.4);
 			display: block;
 			object-fit: cover;
 		}
@@ -58,6 +53,131 @@
 	}
 }
 
+.cta-section-blog {
+	height: 550px;
+	position: relative !important;
+}
+
+code,
+pre {
+	white-space: nowrap !important;
+	overflow-x: scroll;
+	height: auto;
+}
+.centralizer {
+	z-index: 10;
+	position: relative;
+	background: var(--pr-bg);
+	position: relative !important;
+}
+
+.blog__body__text {
+	overflow: visible !important;
+	padding: 3rem 0 !important;
+}
+
+.edit-blog {
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	button {
+		font-size: 14px;
+		padding: 8px 14px !important;
+		transform: scale(0.9);
+	}
+}
+.delete-modal {
+	position: fixed !important;
+	top: 0%;
+	left: 0%;
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	.centered {
+		width: 500px;
+		height: 100px;
+	}
+}
+.none {
+	border: none;
+	cursor: pointer;
+	outline: none;
+	background: none;
+}
+.clap {
+	transition: 0.3s ease all !important;
+	fill: var(--pr-stext);
+	width: 26px !important;
+	height: 30px !important;
+}
+
+.clap-btn {
+	&:hover ~ .text-h {
+		transform: rotateY(0deg);
+	}
+	outline: none !important;
+
+	* {
+		outline: none !important;
+	}
+	position: relative;
+	&:hover {
+		&::after {
+			transform: rotateX(0deg);
+		}
+	}
+	&::after {
+		content: attr(data-snack);
+		position: absolute;
+		bottom: 150%;
+		left: 0;
+		background: black;
+		padding: 4px 8px;
+		transition: 0.2s ease-in-out transform;
+		transform: rotateX(90deg);
+		transform-origin: bottom;
+		color: white;
+		border-radius: 5px;
+	}
+}
+
+.actions {
+	overflow: visible !important;
+	* {
+		overflow: visible !important;
+	}
+	position: fixed;
+	z-index: 100;
+	right: 5%;
+	top: 40%;
+	opacity: 0;
+	pointer-events: none;
+	&.appeared {
+		transition: 0.1s ease-in-out !important;
+		opacity: 1;
+		pointer-events: all;
+	}
+}
+
+.clap-anime-enter {
+	opacity: 0;
+	transform: scale(0.6);
+}
+.clap-anime-enter-active {
+	transition: 0.3s ease all;
+}
+.clap-anime-leave-active {
+	opacity: 0;
+	transform: scale(0.6);
+	transition: 0.3s ease all;
+}
+
+@media (max-width: 1190px) {
+	.actions {
+		position: unset !important;
+		margin-bottom: 50px;
+	}
+}
 @media (max-width: 725px) {
 	.blog-view {
 		display: flex;
@@ -75,12 +195,6 @@
 	.heading-container,
 	.heading-container .heading {
 		width: 90% !important;
-	}
-}
-@media (max-width: 590px) {
-	.actions {
-		position: unset !important;
-		margin-bottom: 50px;
 	}
 }
 @media (max-width: 470px) {

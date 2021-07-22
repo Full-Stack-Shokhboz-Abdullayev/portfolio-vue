@@ -2,7 +2,7 @@
 	<div class="main-wrapper particular-blog">
 		<section
 			ref="blogCta"
-			class="cta-section theme-bgs position-relative shadow-lg"
+			class="cta-section cta-section-blog theme-bgs position-relative shadow-lg"
 		>
 			<!-- <router-link tag="button" class="go-back" :to="{ name: 'blog' }">
 				<i class="fa fa-arrow-left"></i>
@@ -16,7 +16,6 @@
 					loop
 				/>
 				<div v-else-if="blog.posterType === 'image'">
-					<!-- v-if="!blog.posterType === 'video'" -->
 					<v-lazy-image class="intro__img" :src="blog.poster" />
 					<div class="filter"></div>
 				</div>
@@ -60,7 +59,11 @@
 
 		<div class="actions" ref="actions">
 			<div class="d-flex justify-content-center align-items-center">
-				<button class="none py-0 clap-btn" @click="changeClap">
+				<button
+					data-snack="Clap!"
+					class="none py-0 clap-btn"
+					@click="changeClap"
+				>
 					<span>
 						<svg
 							width="25"
@@ -82,8 +85,8 @@
 						</svg>
 					</span>
 				</button>
-				<span class="text-h"> Clap! </span>
-				<span class="mt-1"> {{ blog.claps }} </span>
+				<!-- <span class="text-h"> Clap! </span> -->
+				<span> {{ blog.claps }} </span>
 			</div>
 		</div>
 	</div>
@@ -224,111 +227,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-code,
-pre {
-	white-space: nowrap !important;
-	overflow-x: scroll;
-	height: auto;
-}
-.centralizer {
-	z-index: 10;
-	position: relative;
-	background: var(--pr-bg);
-	position: relative !important;
-}
-
-.cta-section {
-	height: 550px;
-	position: relative !important;
-}
-.blog__body__text {
-	overflow: visible !important;
-	padding: 3rem 0 !important;
-}
-
-.edit-blog {
-	position: absolute;
-	bottom: 15px;
-	right: 15px;
-	button {
-		font-size: 14px;
-		padding: 8px 14px !important;
-		transform: scale(0.9);
-	}
-}
-.delete-modal {
-	position: fixed !important;
-	top: 0%;
-	left: 0%;
-	display: flex !important;
-	justify-content: center;
-	align-items: center;
-	.centered {
-		width: 500px;
-		height: 100px;
-	}
-}
-.none {
-	border: none;
-	cursor: pointer;
-	outline: none;
-	background: none;
-}
-.clap {
-	transition: 0.3s ease all !important;
-	fill: var(--pr-stext);
-}
-
-.clap-btn {
-	&:hover ~ .text-h {
-		transform: rotateY(0deg);
-	}
-}
-
-.actions {
-	overflow: visible !important;
-	* {
-		overflow: visible !important;
-	}
-	position: fixed;
-	z-index: 100;
-	left: 90%;
-	top: 45%;
-	opacity: 0;
-	pointer-events: none;
-	transition: 0.2s ease-in-out;
-	&.appeared {
-		opacity: 1;
-		pointer-events: all;
-	}
-}
-.text-h {
-	position: absolute;
-	bottom: 150%;
-	left: 0;
-	background: black;
-	padding: 4px 8px;
-	transition: 0.4s ease-in-out transform;
-	transform: rotateX(90deg);
-	transform-origin: bottom;
-	color: white;
-	border-radius: 5px;
-}
-.main-wrapper,
-.min-h {
-	perspective: 0 !important;
-}
-.clap-anime-enter {
-	opacity: 0;
-	transform: scale(0.6);
-}
-.clap-anime-enter-active {
-	transition: 0.3s ease all;
-}
-.clap-anime-leave-active {
-	opacity: 0;
-	transform: scale(0.6);
-	transition: 0.3s ease all;
-}
-</style>
+<style lang="scss" scoped></style>

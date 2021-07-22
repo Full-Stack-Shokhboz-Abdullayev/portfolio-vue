@@ -21,7 +21,7 @@
 
 				<transition name="fade" mode="out-in">
 					<form
-					v-if="!added"
+						v-if="!added"
 						key="newsletter-form"
 						@submit.prevent="subscribeToNewsletter"
 						class="signup-form form-inline justify-content-center mt-5 pt-3"

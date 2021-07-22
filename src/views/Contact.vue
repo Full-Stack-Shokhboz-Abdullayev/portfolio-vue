@@ -184,42 +184,48 @@ export default {
 				return
 			}
 			this.sending = true
-			const { msg } = await asyncGetter('/send-msg', {
-				post: true,
-				body: {
-					...this.contactInfo
-				}
-			})
-
-			this.contactInfo = {
-				fullName: '',
-				email: '',
-				package: '',
-				msg: ''
-			}
-			this.selection = 'Select a Package'
-			this.msg = msg
-			this.sending = false
-			document
-				.querySelectorAll('.contact2-form .wrap-input2')
-				.forEach((i) => {
-					i.classList.remove('filled')
+			try {
+				const { msg } = await asyncGetter('/send-msg', {
+					post: true,
+					body: {
+						...this.contactInfo
+					}
 				})
 
-			tl.from(
-				'#tick',
-				{
-					strokeDashoffset: 70
-				},
-				'+=0.6'
-			).from(
-				'.ct',
-				{
-					opacity: 1
-				},
-				'+=0.6'
-			)
-			this.sent = true
+				this.contactInfo = {
+					fullName: '',
+					email: '',
+					package: '',
+					msg: ''
+				}
+				this.selection = 'Select a Package'
+				this.msg = msg
+				this.sending = false
+				document
+					.querySelectorAll('.contact2-form .wrap-input2')
+					.forEach((i) => {
+						i.classList.remove('filled')
+					})
+
+				tl.from(
+					'#tick',
+					{
+						strokeDashoffset: 70
+					},
+					'+=0.6'
+				)
+				this.$snack.success({
+					text: msg,
+					button: 'ok',
+					duration: 100000
+				})
+				this.sent = true
+			} catch {
+				this.$snack.danger({
+					text: 'Error occured!',
+					button: 'ok'
+				})
+			}
 		},
 		changeSelection(index) {
 			this.selection =
@@ -229,9 +235,9 @@ export default {
 		}
 	},
 	watch: {
-		sent(cur) {
+		sent(current) {
 			setTimeout(() => {
-				if (cur) {
+				if (current) {
 					this.sent = false
 				}
 			}, 1500)
@@ -272,18 +278,6 @@ export default {
 			this.changeSelection(new Number(this.$route.query.package) - 1)
 		}
 	},
-	// beforeRouteUpdate() {
-	// 	if (this.$route.query.package) {
-	// 		this.changeSelection(Number(this.$route.query.package))
-	// 	}
-	// },
-	// beforeRouteEnter(to, from, next) {
-	// 	next((vm) => {
-	// 		if (vm.$route.query.package) {
-	// 			vm.changeSelection(Number(vm.$route.query.package))
-	// 		}
-	// 	})
-	// },
 	head() {
 		return {
 			title: this.$t('header.links.contact'),
@@ -305,59 +299,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.main-wrapper {
-	width: calc(100% - 280px);
-	min-height: 100vh;
-	background-size: cover;
-	background-repeat: no-repeat;
-
-	background-position: center;
-}
-.message-sent {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	left: 0;
-	font-size: 20px !important;
-}
-.message-animation-enter {
-	transform: translateY(20px);
-	opacity: 0;
-	pointer-events: none;
-}
-.message-animation-leave-active {
-	transform: translateY(-20px);
-	opacity: 0;
-	pointer-events: none;
-	transition: 0.4s ease-in-out all;
-}
-.message-animation-enter-active {
-	transition: 0.4s ease-in-out all;
-}
-svg {
-	width: 56px;
-	stroke: white;
-	stroke-width: 5;
-	stroke-dasharray: 70;
-	stroke-dashoffset: 0;
-	fill: transparent;
-}
-.ct {
-	position: absolute;
-	width: 100%;
-	background: #54b689 !important;
-	height: 100%;
-	display: flex;
-	opacity: 0;
-	justify-content: center;
-	align-items: center;
-	top: 0;
-	left: 0;
-	transition: 0.3s ease opacity;
-	&.shown {
-		transition-delay: 0.4s;
-		opacity: 1;
-	}
-}
-</style>
+<style lang="scss" scoped></style>

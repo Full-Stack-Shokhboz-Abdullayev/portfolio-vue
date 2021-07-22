@@ -1,5 +1,5 @@
 <template>
-	<div class="logout-dialog py-4 theme-bg-light">
+	<div class="logout-dialog py-4 theme-bg-light touch-action">
 		<button @click="closeLogout" class="close-btn btn">
 			<i class="fal fa-times"></i>
 		</button>

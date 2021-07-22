@@ -204,7 +204,7 @@
 												<div
 													class="item-meta col-16 col-md-6 col-lg-4 text-mutedl text-left text-md-right"
 												>
-													Tviser | 2021 - Present
+													Tviser | 03-2021 - 05-2021
 												</div>
 											</div>
 											<div class="item-content">

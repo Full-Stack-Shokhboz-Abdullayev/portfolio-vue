@@ -108,10 +108,7 @@ export default {
 		}
 	}
 }
-.main-wrapper {
-	min-height: 100vh;
-	perspective: 1 !important;
-}
+
 .number:first-of-type {
 	margin-right: calc(15px * 2);
 }

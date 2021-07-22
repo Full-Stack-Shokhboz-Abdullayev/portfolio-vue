@@ -360,3 +360,51 @@ footer {
 	pointer-events: none;
 	transition: 0.4s ease-in-out all !important;
 }
+
+.grid-per-2x2 {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(490px, 1fr));
+	grid-template-rows: auto;
+	.observable {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.card-wrapper {
+		align-self: center;
+		justify-self: center;
+		margin: 0 !important;
+	}
+}
+
+.grid-per-3x1 {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+
+	grid-template-rows: auto;
+	.observable {
+		align-self: center;
+		justify-self: center;
+	}
+}
+
+@media (max-width: 570px) {
+	.grid-per-2x2 {
+		grid-template-columns: repeat(auto-fill, minmax(50vw, 1fr));
+	}
+	.grid-per-3x1 {
+		grid-template-columns: repeat(auto-fill, minmax(50vw, 1fr));
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.snackbar {
+		width: 100% !important;
+	}
+}
+
+@media (max-width: 1050px) {
+	.touch-action {
+		touch-action: none;
+	}
+}

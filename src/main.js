@@ -19,7 +19,7 @@ import vLazyImage from 'v-lazy-image'
 import VueSnackbar from 'vue-snack'
 import 'vue-snack/dist/vue-snack.min.css'
 
-Vue.use(VueSnackbar, { time: 5000, close: true })
+Vue.use(VueSnackbar, { time: 155000, close: true })
 Vue.use(VShowSlide, {
 	customEasing: {
 		custom: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'

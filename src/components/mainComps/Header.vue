@@ -218,11 +218,11 @@
 						>
 							<li class="link text-center">
 								<a
-									href="https://tviser.agency"
+									href="https://epam.com"
 									target="_blank"
 									rel="noopener"
 									class="text-l"
-									>tviser.agency</a
+									>EPAM Systems</a
 								>
 							</li>
 						</ul>
