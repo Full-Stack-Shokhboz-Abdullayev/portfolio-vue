@@ -1,6 +1,5 @@
-### Portfolio V2
+### Portfolio
 
-Not responsive yet.
 Best experience with Chrome.
 
-You can see it [here](https://shokhboz-portfoliov2/).
+You can see it [here](https://shox-pro.com/).
