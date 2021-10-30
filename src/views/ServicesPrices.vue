@@ -59,19 +59,31 @@
 							<th scope="col" class="pricing-0-data fafa" />
 							<th
 								scope="col"
-								class="pricing-package-title pricing-1-data fafa shown"
+								class="
+									pricing-package-title pricing-1-data
+									fafa
+									shown
+								"
 							>
 								{{ $t('services.packages.basic.title') }}
 							</th>
 							<th
 								scope="col"
-								class="pricing-package-title pricing-2-data mobile-is-hidden fafa"
+								class="
+									pricing-package-title pricing-2-data
+									mobile-is-hidden
+									fafa
+								"
 							>
 								{{ $t('services.packages.standard.title') }}
 							</th>
 							<th
 								scope="col"
-								class="pricing-package-title pricing-3-data mobile-is-hidden fafa"
+								class="
+									pricing-package-title pricing-3-data
+									mobile-is-hidden
+									fafa
+								"
 							>
 								{{ $t('services.packages.premium.title') }}
 							</th>
@@ -121,7 +133,11 @@
 							>
 								{{ $t('services.regulars.frontend.title')
 								}}<br /><small
-									class="feature-desc font-weight-normal text-muted"
+									class="
+										feature-desc
+										font-weight-normal
+										text-muted
+									"
 									>{{
 										$t(
 											'services.regulars.frontend.description'
@@ -131,7 +147,11 @@
 							</th>
 							<td class="pricing-1-data shown">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -149,7 +169,11 @@
 							</td>
 							<td class="pricing-2-data mobile-is-hidden">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -167,7 +191,11 @@
 							</td>
 							<td class="pricing-3-data mobile-is-hidden">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -191,7 +219,11 @@
 							>
 								{{ $t('services.regulars.backend.title')
 								}}<br /><small
-									class="feature-desc font-weight-normal text-muted"
+									class="
+										feature-desc
+										font-weight-normal
+										text-muted
+									"
 									>{{
 										$t(
 											'services.regulars.backend.description'
@@ -204,7 +236,11 @@
 							</td>
 							<td class="pricing-2-data mobile-is-hidden">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -222,7 +258,11 @@
 							</td>
 							<td class="pricing-3-data mobile-is-hidden">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -251,7 +291,11 @@
 								}}
 								<br />
 								<small
-									class="feature-desc font-weight-normal text-muted"
+									class="
+										feature-desc
+										font-weight-normal
+										text-muted
+									"
 									>{{
 										$t(
 											'services.regulars.dynamicFrontend.description'
@@ -267,7 +311,11 @@
 							</td>
 							<td class="pricing-3-data mobile-is-hidden">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -292,7 +340,11 @@
 								{{ $t('services.regulars.backendApi.title') }}
 								<br />
 								<small
-									class="feature-desc font-weight-normal text-muted"
+									class="
+										feature-desc
+										font-weight-normal
+										text-muted
+									"
 									>{{
 										$t(
 											'services.regulars.backendApi.description'
@@ -308,7 +360,11 @@
 							</td>
 							<td class="pricing-3-data mobile-is-hidden">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -335,7 +391,11 @@
 							<td class="pricing-1-data shown">-</td>
 							<td class="pricing-2-data mobile-is-hidden">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -353,7 +413,11 @@
 							</td>
 							<td class="pricing-3-data mobile-is-hidden">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -379,7 +443,11 @@
 							</th>
 							<td class="pricing-1-data shown">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -397,7 +465,11 @@
 							</td>
 							<td class="pricing-2-data mobile-is-hidden">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -415,7 +487,11 @@
 							</td>
 							<td class="pricing-3-data mobile-is-hidden">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -441,7 +517,11 @@
 							</th>
 							<td class="pricing-1-data shown">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -459,7 +539,11 @@
 							</td>
 							<td class="pricing-2-data mobile-is-hidden">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -477,7 +561,11 @@
 							</td>
 							<td class="pricing-3-data mobile-is-hidden">
 								<svg
-									class="svg-inline--fa fa-check fa-w-16 primary"
+									class="
+										svg-inline--fa
+										fa-check fa-w-16
+										primary
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -604,7 +692,11 @@
 								>
 									<svg
 										:class="{ rotate: !faq.isOpen }"
-										class="svg-inline--fa fa-chevron-down fa-w-14 ease-in-out"
+										class="
+											svg-inline--fa
+											fa-chevron-down fa-w-14
+											ease-in-out
+										"
 										aria-hidden="true"
 										focusable="false"
 										data-prefix="fas"
@@ -691,7 +783,12 @@
 					</div>
 
 					<div
-						class="container-contact2-form-btn d-flex justify-content-center align-items-center"
+						class="
+							container-contact2-form-btn
+							d-flex
+							justify-content-center
+							align-items-center
+						"
 					>
 						<button class="contact2-form-btn btn w-50">Add</button>
 						<transition name="fade">
@@ -808,12 +905,16 @@ export default {
 					})} ${this.$t('services.subtitle2')}`
 				},
 				{
+					name: 'og:description',
+					content: `${this.$t('services.subtitle1', {
+						projects: this.$t('services.subtitle.projects'),
+						resume: this.$t('services.subtitle.resume')
+					})} ${this.$t('services.subtitle2')}`
+				},
+				{
 					property: 'og:title',
 					content: this.$t('header.links.services')
-				},
-				{ property: 'og:site_name', content: 'shox-pro.com' },
-				{ property: 'og:type', content: 'website' },
-				{ name: 'robots', content: 'index,follow' }
+				}
 			]
 		}
 	}

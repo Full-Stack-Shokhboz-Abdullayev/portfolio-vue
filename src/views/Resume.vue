@@ -40,12 +40,23 @@
 		</section>
 		<div id="page-template" ref="resum" class="container px-3 px-lg-5">
 			<article
-				class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg"
+				class="
+					resume-wrapper
+					mx-auto
+					theme-bg-light
+					p-5
+					mb-5
+					my-5
+					shadow-lg
+				"
 			>
 				<div class="resume-header">
 					<div class="row align-items-center">
 						<div
-							class="resume-title col-12 col-md-8 col-lg-8 col-xl-9"
+							class="
+								resume-title
+								col-12 col-md-8 col-lg-8 col-xl-9
+							"
 						>
 							<h2 class="resume-name mb-0 text-uppercase">
 								{{ $t('owner') }}
@@ -56,12 +67,19 @@
 						</div>
 						<!--//resume-title-->
 						<div
-							class="resume-contact col-12 col-md-4 col-lg-4 col-xl-3"
+							class="
+								resume-contact
+								col-12 col-md-4 col-lg-4 col-xl-3
+							"
 						>
 							<ul class="list-unstyled mb-0 websites">
 								<li class="mb-2">
 									<svg
-										class="svg-inline--fa fa-phone-square fa-w-14 fa-fw fa-lg mr-2"
+										class="
+											svg-inline--fa
+											fa-phone-square fa-w-14 fa-fw fa-lg
+											mr-2
+										"
 										aria-hidden="true"
 										focusable="false"
 										data-prefix="fas"
@@ -83,7 +101,14 @@
 								</li>
 								<li class="mb-2">
 									<svg
-										class="svg-inline--fa fa-envelope-square fa-w-14 fa-fw fa-lg mr-2"
+										class="
+											svg-inline--fa
+											fa-envelope-square
+											fa-w-14
+											fa-fw
+											fa-lg
+											mr-2
+										"
 										aria-hidden="true"
 										focusable="false"
 										data-prefix="fas"
@@ -106,7 +131,11 @@
 								</li>
 								<li class="mb-2">
 									<svg
-										class="svg-inline--fa fa-globe fa-w-16 fa-fw fa-lg mr-2"
+										class="
+											svg-inline--fa
+											fa-globe fa-w-16 fa-fw fa-lg
+											mr-2
+										"
 										aria-hidden="true"
 										focusable="false"
 										data-prefix="fas"
@@ -130,7 +159,14 @@
 								</li>
 								<li class="mb-0">
 									<svg
-										class="svg-inline--fa fa-map-marker-alt fa-w-12 fa-fw fa-lg mr-2"
+										class="
+											svg-inline--fa
+											fa-map-marker-alt
+											fa-w-12
+											fa-fw
+											fa-lg
+											mr-2
+										"
 										aria-hidden="true"
 										focusable="false"
 										data-prefix="fas"
@@ -159,7 +195,13 @@
 						class="media flex-column flex-md-row align-items-center"
 					>
 						<img
-							class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 mx-auto"
+							class="
+								resume-profile-image
+								mb-3 mb-md-0
+								mr-md-5
+								ml-md-0
+								mx-auto
+							"
 							src="@/assets/img/SelfPhoto/photo3.jpg"
 							alt="image"
 						/>
@@ -176,33 +218,61 @@
 				<div class="resume-body">
 					<div class="row">
 						<div
-							class="resume-main col-12 col-lg-8 col-xl-9 pr-0 pr-lg-5"
+							class="
+								resume-main
+								col-12 col-lg-8 col-xl-9
+								pr-0 pr-lg-5
+							"
 						>
 							<section class="work-section py-3">
 								<h3
-									class="text-uppercase resume-section-heading mb-4"
+									class="
+										text-uppercase
+										resume-section-heading
+										mb-4
+									"
 								>
 									{{ $t('resume.sections.workExperience') }}
 								</h3>
 
 								<div class="item">
 									<div
-										class="item-heading row align-items-center mb-2"
+										class="
+											item-heading
+											row
+											align-items-center
+											mb-2
+										"
 									>
 										<!-- <div class="item-meta col-12 col-md-6 col-lg-4 text-mutedl text-left text-md-right">Startup | 2013 - 2014</div> -->
 									</div>
 									<div class="item-content">
 										<div class="item">
 											<div
-												class="item-heading row align-items-center mb-2"
+												class="
+													item-heading
+													row
+													align-items-center
+													mb-2
+												"
 											>
 												<h4
-													class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"
+													class="
+														item-title
+														col-12 col-md-6 col-lg-8
+														mb-2 mb-md-0
+													"
 												>
 													Frontend Developer
 												</h4>
 												<div
-													class="item-meta col-16 col-md-6 col-lg-4 text-mutedl text-left text-md-right"
+													class="
+														item-meta
+														col-16 col-md-6 col-lg-4
+														text-mutedl
+														text-left
+														text-md-right
+													"
 												>
 													Tviser | 03-2021 - 05-2021
 												</div>
@@ -225,7 +295,11 @@
 
 							<section class="project-section py-3">
 								<h3
-									class="text-uppercase resume-section-heading mb-4"
+									class="
+										text-uppercase
+										resume-section-heading
+										mb-4
+									"
 								>
 									{{ $t('resume.sections.projects') }}
 								</h3>
@@ -243,15 +317,30 @@
 										class="item mb-3"
 									>
 										<div
-											class="item-heading row align-items-center mb-2"
+											class="
+												item-heading
+												row
+												align-items-center
+												mb-2
+											"
 										>
 											<h4
-												class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0"
+												class="
+													item-title
+													col-12 col-md-6 col-lg-8
+													mb-2 mb-md-0
+												"
 											>
 												{{ project.title }}
 											</h4>
 											<div
-												class="item-meta col-12 col-md-6 col-lg-4 text-mutedl text-left text-md-right"
+												class="
+													item-meta
+													col-12 col-md-6 col-lg-4
+													text-mutedl
+													text-left
+													text-md-right
+												"
 											>
 												{{
 													!project.client.toLowerCase() !==
@@ -277,11 +366,20 @@
 						</div>
 						<!--//resume-main-->
 						<aside
-							class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4"
+							class="
+								resume-aside
+								col-12 col-lg-4 col-xl-3
+								px-lg-4
+								pb-lg-4
+							"
 						>
 							<section class="skills-section py-3">
 								<h3
-									class="text-uppercase resume-section-heading mb-4"
+									class="
+										text-uppercase
+										resume-section-heading
+										mb-4
+									"
 								>
 									{{ $t('resume.sections.skills') }}
 								</h3>
@@ -323,24 +421,37 @@
 							<!--//skills-section-->
 							<section class="education-section py-3">
 								<h3
-									class="text-uppercase resume-section-heading mb-4"
+									class="
+										text-uppercase
+										resume-section-heading
+										mb-4
+									"
 								>
 									{{ $t('resume.sections.education') }}
 								</h3>
 								<ul class="list-unstyled resume-education-list">
 									<li class="mb-3">
 										<div
-											class="resume-degree font-weight-bold"
+											class="
+												resume-degree
+												font-weight-bold
+											"
 										>
 											Full Stack Development Track
 										</div>
 										<div
-											class="resume-degree-org text-mutedl"
+											class="
+												resume-degree-org
+												text-mutedl
+											"
 										>
 											Udacity
 										</div>
 										<div
-											class="resume-degree-time text-mutedl"
+											class="
+												resume-degree-time
+												text-mutedl
+											"
 										>
 											2019 February - 2019 March
 										</div>
@@ -363,7 +474,11 @@
 									</section>//education-section -->
 							<section class="skills-section py-3">
 								<h3
-									class="text-uppercase resume-section-heading mb-4"
+									class="
+										text-uppercase
+										resume-section-heading
+										mb-4
+									"
 								>
 									{{ $t('resume.sections.languages') }}
 								</h3>
@@ -396,12 +511,20 @@
 							<!--//certificates-section-->
 							<section class="skills-section py-3">
 								<h3
-									class="text-uppercase resume-section-heading mb-4"
+									class="
+										text-uppercase
+										resume-section-heading
+										mb-4
+									"
 								>
 									{{ $t('resume.sections.interests') }}
 								</h3>
 								<ul
-									class="list-unstyled resume-interests-list mb-0"
+									class="
+										list-unstyled
+										resume-interests-list
+										mb-0
+									"
 								>
 									<li class="mb-2">Football</li>
 									<li class="mb-2">Swimming</li>
@@ -418,7 +541,14 @@
 				<hr />
 				<div class="resume-footer text-center">
 					<ul
-						class="resume-social-list list-inline mx-auto mb-0 d-inline-block text-mutedl"
+						class="
+							resume-social-list
+							list-inline
+							mx-auto
+							mb-0
+							d-inline-block
+							text-mutedl
+						"
 					>
 						<li class="list-inline-item mb-lg-0 mr-5">
 							<a
@@ -426,7 +556,12 @@
 								href="https://github.com/Full-Stack-Shokhboz-Abdullayev/"
 							>
 								<svg
-									class="svg-inline--fa fa-github-square fa-w-14 mr-2 fa-2x"
+									class="
+										svg-inline--fa
+										fa-github-square fa-w-14
+										mr-2
+										fa-2x
+									"
 									data-fa-transform="down-4"
 									aria-hidden="true"
 									focusable="false"
@@ -464,7 +599,11 @@
 								href="https://www.linkedin.com/in/shokhboz-abdullayev-8545b01b9/"
 							>
 								<svg
-									class="svg-inline--fa fa-linkedin fa-w-14 fa-2x mr-2"
+									class="
+										svg-inline--fa
+										fa-linkedin fa-w-14 fa-2x
+										mr-2
+									"
 									data-fa-transform="down-4"
 									aria-hidden="true"
 									focusable="false"
@@ -534,12 +673,13 @@ export default {
 					content: this.$t('resume.subtitle')
 				},
 				{
+					name: 'og:description',
+					content: this.$t('resume.subtitle')
+				},
+				{
 					property: 'og:title',
 					content: this.$t('header.links.resume')
-				},
-				{ property: 'og:site_name', content: 'shox-pro.com' },
-				{ property: 'og:type', content: 'website' },
-				{ name: 'robots', content: 'index,follow' }
+				}
 			]
 		}
 	}

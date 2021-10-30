@@ -24,7 +24,13 @@
 						v-if="!added"
 						key="newsletter-form"
 						@submit.prevent="subscribeToNewsletter"
-						class="signup-form form-inline justify-content-center mt-5 pt-3"
+						class="
+							signup-form
+							form-inline
+							justify-content-center
+							mt-5
+							pt-3
+						"
 					>
 						<div
 							class="wrap-input2 validate-input newsletter mr-4"
@@ -113,9 +119,8 @@
 							v-for="blog in searchWrappedBlogs"
 							:key="blog._id"
 							:class="{
-								'd-inline-block': searchWrappedBlogs.includes(
-									blog
-								)
+								'd-inline-block':
+									searchWrappedBlogs.includes(blog)
 							}"
 						>
 							<div class="card blog-post-card fafa">
@@ -196,7 +201,13 @@
 					<div
 						key="empty"
 						v-else-if="blogPosts.length <= 0"
-						class="empty d-flex align-items-center justify-content-center mt-5"
+						class="
+							empty
+							d-flex
+							align-items-center
+							justify-content-center
+							mt-5
+						"
 					>
 						<div class="d-flex flex-column">
 							<p>
@@ -214,7 +225,13 @@
 					<div
 						v-else-if="searchWrappedBlogs.length <= 0"
 						key="not-found"
-						class="not-found d-flex align-items-center justify-content-center mt-5"
+						class="
+							not-found
+							d-flex
+							align-items-center
+							justify-content-center
+							mt-5
+						"
 					>
 						<svg
 							version="1.1"
@@ -379,12 +396,15 @@ export default {
 					)}`
 				},
 				{
+					name: 'og:description',
+					content: `${this.$t('blog.title')} ${this.$t(
+						'blog.subtitle'
+					)}`
+				},
+				{
 					property: 'og:title',
 					content: this.$t('header.links.blog')
-				},
-				{ property: 'og:site_name', content: 'shox-pro.com' },
-				{ property: 'og:type', content: 'website' },
-				{ name: 'robots', content: 'index,follow' }
+				}
 			]
 		}
 	},

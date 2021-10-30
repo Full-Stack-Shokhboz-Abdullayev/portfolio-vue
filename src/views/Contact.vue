@@ -287,12 +287,13 @@ export default {
 					content: this.$t('contact.subtitle2')
 				},
 				{
-					property: 'og:title',
-					content: this.$t('header.links.contact')
+					name: 'og:description',
+					content: this.$t('contact.subtitle2')
 				},
-				{ property: 'og:site_name', content: 'shox-pro.com' },
-				{ property: 'og:type', content: 'website' },
-				{ name: 'robots', content: 'index,follow' }
+				{
+					property: 'og:title',
+					content: this.$t('header.links.about')
+				}
 			]
 		}
 	}

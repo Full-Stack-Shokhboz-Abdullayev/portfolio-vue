@@ -2,7 +2,12 @@
 	<div class="main-wrapper particular-blog">
 		<section
 			ref="blogCta"
-			class="cta-section cta-section-blog theme-bgs position-relative shadow-lg"
+			class="
+				cta-section cta-section-blog
+				theme-bgs
+				position-relative
+				shadow-lg
+			"
 		>
 			<!-- <router-link tag="button" class="go-back" :to="{ name: 'blog' }">
 				<i class="fa fa-arrow-left"></i>
@@ -161,9 +166,8 @@ export default {
 		},
 		playVideo() {
 			setTimeout(() => {
-				const fullScreenVideo = document.querySelector(
-					'#fullScreenVideo'
-				)
+				const fullScreenVideo =
+					document.querySelector('#fullScreenVideo')
 				if (fullScreenVideo) {
 					fullScreenVideo.src = this.blog.poster
 					fullScreenVideo.play()
@@ -197,10 +201,30 @@ export default {
 		return {
 			title: this.blog.heading
 				? this.blog.heading + ` | ${this.$t('header.links.blog')}`
-				: 'Loading...'
+				: 'Loading...',
+			meta: [
+				{
+					property: 'description',
+					content: this.blog.tag
+				},
+				{
+					property: 'og:title',
+					content: this.blog.heading + ' | ' + this.blog.language
+				},
+				{
+					property:
+						'og:' + this.blog.posterType === 'video'
+							? 'video'
+							: 'image',
+					content: this.blog.poster
+				},
+				{
+					property: 'og:description',
+					content: this.blog.tag
+				}
+			]
 		}
 	},
-
 	mounted() {
 		this.setClapSvg()
 		this.playVideo()

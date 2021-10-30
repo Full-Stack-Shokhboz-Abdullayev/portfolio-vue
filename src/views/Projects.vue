@@ -138,7 +138,11 @@
 										target="_blank"
 									>
 										<svg
-											class="svg-inline--fa fa-eye fa-w-18 mr-2"
+											class="
+												svg-inline--fa
+												fa-eye fa-w-18
+												mr-2
+											"
 											aria-hidden="true"
 											focusable="false"
 											data-prefix="fas"
@@ -255,7 +259,12 @@
 				<div class="wrap-input2 w-100 validate-input">
 					<div class="chosen-types"></div>
 					<div
-						class="types d-flex justify-content-around align-items-center"
+						class="
+							types
+							d-flex
+							justify-content-around
+							align-items-center
+						"
 					>
 						<template
 							v-for="(i, index) in Object.keys(
@@ -286,7 +295,12 @@
 					</div>
 				</div>
 				<div
-					class="container-contact2-form-btn d-flex justify-content-center align-items-center"
+					class="
+						container-contact2-form-btn
+						d-flex
+						justify-content-center
+						align-items-center
+					"
 				>
 					<button
 						class="contact2-form-btn btn w-50 position-relative"
@@ -472,12 +486,13 @@ export default {
 					content: this.$t('projects.description')
 				},
 				{
+					name: 'og:description',
+					content: this.$t('projects.description')
+				},
+				{
 					property: 'og:title',
 					content: this.$t('header.links.projects')
-				},
-				{ property: 'og:site_name', content: 'shox-pro.com' },
-				{ property: 'og:type', content: 'website' },
-				{ name: 'robots', content: 'index,follow' }
+				}
 			]
 		}
 	}

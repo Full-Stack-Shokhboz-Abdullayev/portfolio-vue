@@ -903,28 +903,16 @@ export default {
 					})
 				},
 				{
+					name: 'og:description',
+					content: this.$t('about.description.all', {
+						projects: this.$t('about.description.projects'),
+						resume: this.$t('about.description.resume')
+					})
+				},
+				{
 					property: 'og:title',
 					content: this.$t('header.links.about')
-				},
-				{ property: 'og:site_name', content: 'shox-pro.com' },
-				{ property: 'og:type', content: 'website' },
-				{
-					property: 'og:image:url',
-					content: 'https://shox-pro.com/img/photo1-min.d06e4135.jpg'
-				},
-				{
-					property: 'og:image:width',
-					content: '200px'
-				},
-				{
-					property: 'og:image:height',
-					content: '150px'
-				},
-				{
-					property: 'og:url',
-					content: 'https://shox-pro.com'
-				},
-				{ name: 'robots', content: 'index,follow' }
+				}
 			]
 		}
 	}
