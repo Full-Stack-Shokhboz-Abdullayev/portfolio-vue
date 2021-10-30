@@ -214,6 +214,7 @@ export default {
 				},
 				{
 					property: 'og:' + this.blog.posterType,
+					vmid: 'open-graph-img',
 					content: this.blog.poster
 				},
 				{

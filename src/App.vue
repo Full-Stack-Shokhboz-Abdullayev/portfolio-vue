@@ -53,8 +53,14 @@ export default {
 			title: "Shokhboz Abdullaev's Blog/Portfolio",
 			titleTemplate: '%s | shox-pro.com',
 			meta: [
+				{ charset: 'utf-8' },
+				{
+					name: 'viewport',
+					content: 'width=device-width, initial-scale=1'
+				},
 				{
 					property: 'og:image',
+					vmid: 'open-graph-img',
 					content: 'https://shox-pro.com/assets/photo1-min.jpg'
 				},
 
