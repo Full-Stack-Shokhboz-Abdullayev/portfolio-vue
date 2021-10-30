@@ -16,6 +16,7 @@
 				<video
 					v-if="blog.posterType === 'video'"
 					class="intro__img"
+					:src="blog.poster"
 					id="fullScreenVideo"
 					muted
 					loop
@@ -212,10 +213,7 @@ export default {
 					content: this.blog.heading + ' | ' + this.blog.language
 				},
 				{
-					property:
-						'og:' + this.blog.posterType === 'video'
-							? 'video'
-							: 'image',
+					property: 'og:' + this.blog.posterType,
 					content: this.blog.poster
 				},
 				{
