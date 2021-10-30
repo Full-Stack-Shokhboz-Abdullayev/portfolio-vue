@@ -10,7 +10,7 @@ import VShowSlide from 'v-show-slide'
 import i18n from './i18n'
 import nProgressCss from 'nprogress/nprogress.css'
 //Components
-import intersectionAnimation from '@/assets/jsComponents/intersectionAnimtations'
+import intersectionAnimation from '@/assets/jsComponents/intersectionAnimations'
 
 import VModal from 'vue-js-modal'
 

@@ -49,7 +49,11 @@
 								:to="{ name: 'projects' }"
 								class="btn prj mr-2 mt-2 mb-3"
 								><svg
-									class="svg-inline--fa fa-arrow-alt-circle-right fa-w-16 mr-2"
+									class="
+										svg-inline--fa
+										fa-arrow-alt-circle-right fa-w-16
+										mr-2
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -75,7 +79,11 @@
 								:to="{ name: 'resume' }"
 								class="btn mt-2 btn-secondary-custom mb-3"
 								><svg
-									class="svg-inline--fa fa-file-alt fa-w-12 mr-2"
+									class="
+										svg-inline--fa
+										fa-file-alt fa-w-12
+										mr-2
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fas"
@@ -100,7 +108,14 @@
 					<!--//media-body-->
 					<div
 						ref="img-wrapper"
-						class="wrapper-img profile-image position-relative ml-lg-5 mb-3 mb-lg-0 mr-md-0"
+						class="
+							wrapper-img
+							profile-image
+							position-relative
+							ml-lg-5
+							mb-3 mb-lg-0
+							mr-md-0
+						"
 					>
 						<!-- <v-lazy-image
 							class="profile-image"
@@ -127,7 +142,11 @@
 						<div class="item-inner">
 							<div class="item-icon">
 								<svg
-									class="svg-inline--fa js fa-js-square fa-w-14"
+									class="
+										svg-inline--fa
+										js
+										fa-js-square fa-w-14
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fab"
@@ -155,7 +174,13 @@
 						<div class="item-inner">
 							<div class="item-icon">
 								<svg
-									class="svg-inline--fa fa-vuejs vue fa-w-14 mr-2"
+									class="
+										svg-inline--fa
+										fa-vuejs
+										vue
+										fa-w-14
+										mr-2
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fab"
@@ -171,7 +196,12 @@
 									></path></svg
 								><!-- <i class="fab fa-vuejs"></i> Font Awesome fontawesome.com -->
 								<svg
-									class="svg-inline--fa fa-react react fa-w-16"
+									class="
+										svg-inline--fa
+										fa-react
+										react
+										fa-w-16
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fab"
@@ -204,7 +234,13 @@
 						<div class="item-inner">
 							<div class="item-icon">
 								<svg
-									class="svg-inline--fa fa-node-js node fa-w-14 mr-2"
+									class="
+										svg-inline--fa
+										fa-node-js
+										node
+										fa-w-14
+										mr-2
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fab"
@@ -257,7 +293,12 @@
 						<div class="item-inner">
 							<div class="item-icon">
 								<svg
-									class="svg-inline--fa fa-python python fa-w-14"
+									class="
+										svg-inline--fa
+										fa-python
+										python
+										fa-w-14
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fab"
@@ -319,7 +360,13 @@
 						<div class="item-inner">
 							<div class="item-icon">
 								<svg
-									class="svg-inline--fa fa-npm npm fa-w-18 mr-2"
+									class="
+										svg-inline--fa
+										fa-npm
+										npm
+										fa-w-18
+										mr-2
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fab"
@@ -335,7 +382,13 @@
 									></path>
 								</svg>
 								<svg
-									class="svg-inline--fa fa-gulp gulp fa-w-8 mr-2"
+									class="
+										svg-inline--fa
+										fa-gulp
+										gulp
+										fa-w-8
+										mr-2
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fab"
@@ -365,7 +418,13 @@
 						<div class="item-inner">
 							<div class="item-icon">
 								<svg
-									class="svg-inline--fa fa-html5 html fa-w-12 mr-2"
+									class="
+										svg-inline--fa
+										fa-html5
+										html
+										fa-w-12
+										mr-2
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fab"
@@ -380,7 +439,12 @@
 										d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"
 									></path></svg
 								><!-- <i class="fab fa-html5 mr-2"></i> Font Awesome fontawesome.com --><svg
-									class="svg-inline--fa fa-css3-alt css fa-w-12"
+									class="
+										svg-inline--fa
+										fa-css3-alt
+										css
+										fa-w-12
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fab"
@@ -396,7 +460,12 @@
 									></path></svg
 								><!-- <i class="fab fa-css3-alt"></i> Font Awesome fontawesome.com -->
 								<svg
-									class="svg-inline--fa fa-sass fa-w-20 sass ml-2"
+									class="
+										svg-inline--fa
+										fa-sass fa-w-20
+										sass
+										ml-2
+									"
 									aria-hidden="true"
 									focusable="false"
 									data-prefix="fab"
@@ -471,7 +540,11 @@
 						:to="{ name: 'servicesPricing' }"
 						class="btn prj"
 						><svg
-							class="svg-inline--fa fa-arrow-alt-circle-right fa-w-16 mr-2"
+							class="
+								svg-inline--fa
+								fa-arrow-alt-circle-right fa-w-16
+								mr-2
+							"
 							aria-hidden="true"
 							focusable="false"
 							data-prefix="fas"
@@ -511,7 +584,7 @@
 
 				<div
 					v-show-slide:400:ease="!featuredProjectsLoading"
-					class="grid-per-2x2"
+					class="grid-per-2x2 t3d-section"
 				>
 					<div
 						v-for="(project, index) in featuredProjects"
@@ -528,7 +601,13 @@
 							<div class="card fafa about-card project-card">
 								<div class="row no-gutters">
 									<div
-										class="col-lg-4 card-img-holder project-card-img tr position-relative"
+										class="
+											col-lg-4
+											card-img-holder
+											project-card-img
+											tr
+											position-relative
+										"
 									>
 										<v-lazy-image
 											:src="project.image"
@@ -537,8 +616,8 @@
 										<div class="filter"></div>
 										<!-- <img :src="projects.imgSrc" class="card-img" alt="image"> -->
 									</div>
-									<div class="col-lg-8">
-										<div class="card-body">
+									<div class="col-lg-8 h-100">
+										<div class="card-body h-100">
 											<h5 class="card-title tr">
 												<a
 													:href="project.url"
@@ -561,11 +640,19 @@
 								<div class="link-mask tr">
 									<div class="link-mask-text">
 										<a
-											class="btn watch btn-secondary-custom"
+											class="
+												btn
+												watch
+												btn-secondary-custom
+											"
 											:href="project.url"
 										>
 											<svg
-												class="svg-inline--fa fa-eye fa-w-18 mr-2"
+												class="
+													svg-inline--fa
+													fa-eye fa-w-18
+													mr-2
+												"
 												aria-hidden="true"
 												focusable="false"
 												data-prefix="fas"
@@ -599,7 +686,11 @@
 						:to="{ name: 'projects' }"
 						class="btn prj"
 						><svg
-							class="svg-inline--fa fa-arrow-alt-circle-right fa-w-16 mr-2"
+							class="
+								svg-inline--fa
+								fa-arrow-alt-circle-right fa-w-16
+								mr-2
+							"
 							aria-hidden="true"
 							focusable="false"
 							data-prefix="fas"
@@ -702,7 +793,11 @@
 				<div class="text-center py-3 observable">
 					<router-link exact :to="{ name: 'blog' }" class="btn prj"
 						><svg
-							class="svg-inline--fa fa-arrow-alt-circle-right fa-w-16 mr-2"
+							class="
+								svg-inline--fa
+								fa-arrow-alt-circle-right fa-w-16
+								mr-2
+							"
 							aria-hidden="true"
 							focusable="false"
 							data-prefix="fas"
@@ -813,6 +908,10 @@ export default {
 				},
 				{ property: 'og:site_name', content: 'shox-pro.com' },
 				{ property: 'og:type', content: 'website' },
+				{
+					property: 'og:image',
+					content: require('../assets/img/SelfPhoto/photo1-min.jpg')
+				},
 				{ name: 'robots', content: 'index,follow' }
 			]
 		}
@@ -823,7 +922,10 @@ export default {
 
 <style lang="scss" scoped>
 .main-wrapper {
-	perspective: 1600px;
+	-webkit-perspective: 600px;
+	-moz-perspective: 600px;
+	-ms-perspective: 600px;
+	perspective: 600px;
 	perspective-origin: 50% 50%;
 }
 </style>

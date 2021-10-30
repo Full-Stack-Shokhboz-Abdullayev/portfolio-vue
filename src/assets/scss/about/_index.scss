@@ -111,19 +111,38 @@
 	bottom: 0;
 }
 .transformed {
-	transform: translateZ(70px);
+	overflow: visible !important;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transform: translateZ(70px) !important;
 }
 .transformed2 {
-	transform: translateZ(60px);
+	overflow: visible !important;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+
+	transform: translateZ(60px) !important;
 }
 .transformed3 {
-	transform: translateZ(40px);
+	overflow: visible !important;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+
+	transform: translateZ(40px) !important;
 }
 .transformed4 {
-	transform: translateZ(20px);
+	overflow: visible !important;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+
+	transform: translateZ(20px) !important;
 }
 .transformed5 {
-	transform: translateZ(120px);
+	overflow: visible !important;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+
+	transform: translateZ(120px) !important;
 }
 
 .profile-image {
@@ -151,10 +170,14 @@
 
 .about-card {
 	box-shadow: 0px 0px 20px rgba(1, 1, 1, 0.2) !important;
-	.card-body {
+}
+
+.t3d-section {
+	transform-style: preserve-3d;
+
+	* {
 		transform-style: preserve-3d;
 	}
-	transform-style: preserve-3d;
 }
 .latest-blog-section {
 	.card {
