@@ -1,7 +1,7 @@
 {
   "about": {
     "description": {
-      "all": "I'm a full-stack developer with a year of experience using Vue.js and Express.js to build awesome, reliable, responsive, automated, attractive Single Page Applications. Just forget about old reloading web sites. See further in my {projects} or check out my {resume}.",
+      "all": "I'm a full-stack developer with 3 years of experience using Vue.js and Express.js to build awesome, reliable, responsive, automated, attractive Single Page Applications. Just forget about old reloading web sites. See further in my {projects} or check out my {resume}.",
       "projects": "projects",
       "resume": "resume"
     },
@@ -9,7 +9,7 @@
       "featured": "Featured Projects",
       "lbp": "Latest Blog Posts",
       "wid": {
-        "tagline": "I have experience with the web for a year building commercial and personal projects. Here's the quick overview of what I use to build cool web apps.",
+        "tagline": "I have experience with the web for 3 years building commercial and personal projects. Here's the quick overview of what I use to build cool web apps.",
         "title": "What I do"
       }
     },
