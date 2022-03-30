@@ -1,7 +1,7 @@
 {
   "about": {
     "description": {
-      "all": "Men bir yillik tajribali bo'lgan, Vue.js va Express dan foydalanib ajoyib, ishonchli, ta'sirchan, avtomatlashtirilgan, jozibali, yagona sahifali veb-dasturlarni tuzgan full stack dasturchiman. Endi eski qayta yuklanadigan veb-saytlarni unuting. Mening  {resume}im bilan tanishib chiqing yoki {projects}imni ko'rib chiqing.",
+      "all": "Men 3 yillik tajribali bo'lgan, Vue.js va Express dan foydalanib ajoyib, ishonchli, ta'sirchan, avtomatlashtirilgan, jozibali, yagona sahifali veb-dasturlarni tuzgan full stack dasturchiman. Endi eski qayta yuklanadigan veb-saytlarni unuting. Mening  {resume}im bilan tanishib chiqing yoki {projects}imni ko'rib chiqing.",
       "projects": "loyihalar",
       "resume": "rezyume"
     },
@@ -9,7 +9,7 @@
       "featured": "Saralangan Loyihalar",
       "lbp": "So'nggi Bloglar",
       "wid": {
-        "tagline": "Mening bir yil davomida loyihalar tuzish bilan tajribam bor. Ajoyib veb-ilovalarni tuzish uchun foydalanadigan texnologiyalar haqida qisqacha ma'lumot.",
+        "tagline": "Mening 3 yil davomida loyihalar tuzish bilan tajribam bor. Ajoyib veb-ilovalarni tuzish uchun foydalanadigan texnologiyalar haqida qisqacha ma'lumot.",
         "title": "Men nima qilaman"
       }
     },
