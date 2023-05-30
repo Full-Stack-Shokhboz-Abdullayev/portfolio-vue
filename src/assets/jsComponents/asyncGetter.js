@@ -4,7 +4,7 @@ export default async (url, options = {}, afterWards = '') => {
 	let _BASE
 
 	if (process.env.NODE_ENV === 'production') {
-		_BASE = 'https://shox-pro-backend.herokuapp.com/shox-api'
+		_BASE = 'https://portfolio-1-s3279586.deta.app/shox-api'
 	} else {
 		_BASE = 'http://localhost:7777/shox-api'
 	}
